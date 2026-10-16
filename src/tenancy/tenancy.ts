@@ -34,11 +34,14 @@ export class Tenancy {
   readonly mode: TenancyMode;
   readonly prefix: string;
   readonly poolMax: number;
+  readonly sharedPoolMax: number;
 
-  constructor(mode: TenancyMode, prefix: string, poolMax = 2) {
+  // poolMax: connections per siloed tenant database; sharedPoolMax: for the shared pool.
+  constructor(mode: TenancyMode, prefix: string, poolMax = 2, sharedPoolMax = poolMax) {
     this.mode = mode;
     this.prefix = ident(prefix);
     this.poolMax = poolMax;
+    this.sharedPoolMax = sharedPoolMax;
   }
 
   tierOf(t: TenantSpec): Tier {
@@ -123,11 +126,17 @@ export class Tenancy {
     return { tenantId: t.id, mode: this.mode, tier, steps, sqlStatements, filesChanged: 0, ms: performance.now() - started };
   }
 
+  // Register tenants onboarded by another process (for example a worker thread).
+  attach(specs: readonly TenantSpec[]): void {
+    for (const t of specs) this.tenants.set(t.id, t);
+  }
+
   pool(tenantId: string): pg.Pool {
-    const db = this.databaseOf(this.spec(tenantId));
+    const spec = this.spec(tenantId);
+    const db = this.databaseOf(spec);
     let p = this.pools.get(db);
     if (!p) {
-      p = new pg.Pool({ ...config(db), max: this.poolMax });
+      p = new pg.Pool({ ...config(db), max: this.tierOf(spec) === "silo" ? this.poolMax : this.sharedPoolMax });
       this.pools.set(db, p);
     }
     return p;
@@ -140,6 +149,13 @@ export class Tenancy {
       await c.query("SET LOCAL ROLE app_rw");
       return fn(c);
     });
+  }
+
+  // Connections this instance may hold open at once.
+  connectionCeiling(): number {
+    let n = 0;
+    for (const [db, p] of this.pools) n += p.options.max ?? 0;
+    return n;
   }
 
   async close(): Promise<void> {

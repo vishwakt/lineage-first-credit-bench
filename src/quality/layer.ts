@@ -5,7 +5,7 @@
 //   xval          duplicate detection plus cross-validation against bank statements
 //   xval_anomaly  also quarantines isolated anomalies that the bank cannot confirm
 
-import { addDays } from "../generator/calendar.ts";
+import { addDays, firstOfPeriod, shiftPeriod } from "../generator/calendar.ts";
 import type { AltPayment, Part, Quarantined, SourceId } from "../core/types.ts";
 
 export type QualityMode = "off" | "xval" | "xval_anomaly";
@@ -58,21 +58,32 @@ export function applyQuality(
         confirmed.add(p);
       }
     }
+    // Each leftover debit belongs to the unconfirmed record with the latest due date before it.
+    // Debits from after the next due date following the last reported period belong to a
+    // period this feed has not reported yet, so they cannot contradict it.
+    const lastPeriod = unique.reduce((m, p) => (p.period > m ? p.period : m), "");
+    const horizon = firstOfPeriod(shiftPeriod(lastPeriod, 1));
+    const contradicted = new Set<AltPayment>();
+    for (const [payee, list] of debits)
+      for (const d of list) {
+        if (d.used || d.date >= horizon) continue;
+        let best: AltPayment | undefined;
+        for (const p of unique)
+          if (p.payee === payee && !confirmed.has(p) && !contradicted.has(p) && p.amountCents === d.amountCents &&
+              d.date >= p.due && d.date < addDays(p.due, MATCH_WINDOW_DAYS) && (!best || p.due > best.due)) best = p;
+        if (best) {
+          d.used = true;
+          contradicted.add(best);
+        }
+      }
     const kept: AltPayment[] = [];
     const unverified: AltPayment[] = [];
     for (const p of unique) {
-      if (confirmed.has(p)) {
-        kept.push(p);
-        continue;
-      }
-      const end = addDays(p.due, MATCH_WINDOW_DAYS);
-      const d = debits.get(p.payee)?.find((x) => !x.used && x.amountCents === p.amountCents && x.date >= p.due && x.date < end);
-      if (d) {
-        d.used = true;
+      if (contradicted.has(p)) {
         quarantined.push({ source, account: p.account, period: p.period, rule: p.paid === null ? "bank_shows_payment" : "bank_timing_conflict" });
       } else {
         kept.push(p);
-        unverified.push(p);
+        if (!confirmed.has(p)) unverified.push(p);
       }
     }
     // 3. Isolated anomalies the bank could not settle: one adverse record in an otherwise clean stream.

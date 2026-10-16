@@ -33,10 +33,11 @@ export async function runIsolationSuite(
   svc: CreditService,
   decisionsOf: Map<string, string[]>,
   now: string,
+  attackers?: readonly string[],
 ): Promise<AttemptResult[]> {
   const out: AttemptResult[] = [];
   const specs = [...tenancy.tenants.values()];
-  for (const a of specs)
+  for (const a of specs.filter((t) => !attackers || attackers.includes(t.id)))
     for (const b of specs) {
       if (a.id === b.id) continue;
       const rec = (attack: Attack, blocked: boolean) => out.push({ attack, attacker: a.id, victim: b.id, victimPerimeter: b.perimeter, blocked });
