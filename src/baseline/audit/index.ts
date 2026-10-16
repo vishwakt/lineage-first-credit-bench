@@ -3,8 +3,11 @@
 
 import type { SourceId } from "../../core/types.ts";
 import type { SourceAudit } from "./types.ts";
+import { bureauAAudit } from "./bureau_a.ts";
 
-export const AUDITS: Partial<Record<SourceId, SourceAudit>> = {};
+export const AUDITS: Partial<Record<SourceId, SourceAudit>> = {
+  bureau_a: bureauAAudit,
+};
 
 export function auditFor(source: SourceId): SourceAudit {
   const a = AUDITS[source];
