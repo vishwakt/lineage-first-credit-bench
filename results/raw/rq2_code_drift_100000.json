@@ -1,0 +1,101 @@
+{
+  "size": 100000,
+  "commit": "55b830bfcc1883d2745a4e25be296d38971823bb",
+  "revisions": [
+    "none",
+    "adapter_rounding",
+    "quality_window"
+  ],
+  "results": {
+    "none": {
+      "lineage": {
+        "decisions": 100000,
+        "affected": 0,
+        "outcomeChanged": 0,
+        "flagged": 0,
+        "flaggedAffected": 0
+      },
+      "baseline_parsed": {
+        "decisions": 100000,
+        "affected": 47819,
+        "outcomeChanged": 0,
+        "flagged": 0,
+        "flaggedAffected": 0
+      },
+      "baseline_normalized": {
+        "decisions": 100000,
+        "affected": 0,
+        "outcomeChanged": 0,
+        "flagged": 0,
+        "flaggedAffected": 0
+      },
+      "baseline_raw": {
+        "decisions": 100000,
+        "affected": 0,
+        "outcomeChanged": 0,
+        "flagged": 0,
+        "flaggedAffected": 0
+      }
+    },
+    "adapter_rounding": {
+      "lineage": {
+        "decisions": 100000,
+        "affected": 22682,
+        "outcomeChanged": 14,
+        "flagged": 22682,
+        "flaggedAffected": 22682
+      },
+      "baseline_parsed": {
+        "decisions": 100000,
+        "affected": 53006,
+        "outcomeChanged": 14,
+        "flagged": 0,
+        "flaggedAffected": 0
+      },
+      "baseline_normalized": {
+        "decisions": 100000,
+        "affected": 0,
+        "outcomeChanged": 0,
+        "flagged": 0,
+        "flaggedAffected": 0
+      },
+      "baseline_raw": {
+        "decisions": 100000,
+        "affected": 0,
+        "outcomeChanged": 0,
+        "flagged": 0,
+        "flaggedAffected": 0
+      }
+    },
+    "quality_window": {
+      "lineage": {
+        "decisions": 100000,
+        "affected": 944,
+        "outcomeChanged": 5,
+        "flagged": 944,
+        "flaggedAffected": 944
+      },
+      "baseline_parsed": {
+        "decisions": 100000,
+        "affected": 48273,
+        "outcomeChanged": 5,
+        "flagged": 0,
+        "flaggedAffected": 0
+      },
+      "baseline_normalized": {
+        "decisions": 100000,
+        "affected": 944,
+        "outcomeChanged": 5,
+        "flagged": 0,
+        "flaggedAffected": 0
+      },
+      "baseline_raw": {
+        "decisions": 100000,
+        "affected": 944,
+        "outcomeChanged": 5,
+        "flagged": 0,
+        "flaggedAffected": 0
+      }
+    }
+  }
+}

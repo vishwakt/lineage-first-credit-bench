@@ -100,7 +100,7 @@ for d in ("lineage", "baseline"):
             put(f"rq1.{d}.{k}.slope.{fk}", fv)
 
 # RQ2
-for path in sorted(glob.glob(os.path.join(RAW, "rq2_*.json"))):
+for path in sorted(glob.glob(os.path.join(RAW, "rq2_[0-9]*.json"))):
     r = json.load(open(path))
     size = r["size"]
     put(f"rq2.{size}.raw_bytes_per_decision", r["rawBytesPerDecision"])
@@ -123,6 +123,25 @@ for path in sorted(glob.glob(os.path.join(RAW, "rq2_*.json"))):
         for q in ("p50", "p99", "mean"):
             put_summary(f"rq2.{size}.{d}.latency_ms.{q}", [run[d][q] for run in r["latencyRuns"]])
     check(f"rq2 {size}: at least 5 latency runs", len(r["latencyRuns"]) >= 5)
+
+# RQ2 extension: pipeline code drift
+for path in sorted(glob.glob(os.path.join(RAW, "rq2_code_drift_*.json"))):
+    r = json.load(open(path))
+    size = r["size"]
+    control = r["results"]["none"]
+    for rev, designs in r["results"].items():
+        for d, t in designs.items():
+            p = f"rq2drift.{size}.{rev}.{d}"
+            for k in ("affected", "outcomeChanged", "flagged", "flaggedAffected"):
+                put(f"{p}.{k}", t[k])
+            # Decisions a revision breaks on top of the design's other replay mismatches; a
+            # revision here can only break a reconstruction, never repair one.
+            put(f"{p}.newly_affected", t["affected"] - control[d]["affected"])
+            put(f"{p}.detection_share", t["flaggedAffected"] / t["affected"] if t["affected"] else None)
+            put(f"{p}.false_alarms", t["flagged"] - t["flaggedAffected"])
+            check(f"rq2drift {size} {rev} {d}: every decision replayed", t["decisions"] == size)
+        check(f"rq2drift {size} {rev}: lineage flags exactly the affected replays",
+              designs["lineage"]["flagged"] == designs["lineage"]["affected"] == designs["lineage"]["flaggedAffected"])
 
 # RQ3
 r3 = load("rq3_tenancy.json")

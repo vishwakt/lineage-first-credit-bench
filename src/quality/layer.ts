@@ -11,7 +11,8 @@ import type { AltPayment, Part, Quarantined, SourceId } from "../core/types.ts";
 export type QualityMode = "off" | "xval" | "xval_anomaly";
 export const QUALITY_MODES: readonly QualityMode[] = ["off", "xval", "xval_anomaly"];
 
-const MATCH_WINDOW_DAYS = 55;
+// Tunable settings. Changing one is a code revision; experiments/rq2_code_drift.ts uses this.
+export const QUALITY_SETTINGS = { matchWindowDays: 55 };
 
 export function applyQuality(
   parts: Partial<Record<SourceId, Part>>,
@@ -70,7 +71,7 @@ export function applyQuality(
         let best: AltPayment | undefined;
         for (const p of unique)
           if (p.payee === payee && !confirmed.has(p) && !contradicted.has(p) && p.amountCents === d.amountCents &&
-              d.date >= p.due && d.date < addDays(p.due, MATCH_WINDOW_DAYS) && (!best || p.due > best.due)) best = p;
+              d.date >= p.due && d.date < addDays(p.due, QUALITY_SETTINGS.matchWindowDays) && (!best || p.due > best.due)) best = p;
         if (best) {
           d.used = true;
           contradicted.add(best);

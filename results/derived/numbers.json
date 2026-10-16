@@ -101,6 +101,66 @@
    "ok": true
   },
   {
+   "check": "rq2drift 100000 none lineage: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 none baseline_parsed: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 none baseline_normalized: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 none baseline_raw: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 none: lineage flags exactly the affected replays",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 adapter_rounding lineage: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 adapter_rounding baseline_parsed: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 adapter_rounding baseline_normalized: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 adapter_rounding baseline_raw: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 adapter_rounding: lineage flags exactly the affected replays",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 quality_window lineage: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 quality_window baseline_parsed: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 quality_window baseline_normalized: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 quality_window baseline_raw: every decision replayed",
+   "ok": true
+  },
+  {
+   "check": "rq2drift 100000 quality_window: lineage flags exactly the affected replays",
+   "ok": true
+  },
+  {
    "check": "rq3 silo 10: API and scoped paths always blocked",
    "ok": true
   },
@@ -885,6 +945,90 @@
   "rq2.1000000.lineage.refdata_drift.outcomeEqual_share": 1.0,
   "rq2.1000000.lineage.refdata_drift.rawExact_share": 1.0,
   "rq2.1000000.raw_bytes_per_decision": 7695.063182,
+  "rq2drift.100000.adapter_rounding.baseline_normalized.affected": 0,
+  "rq2drift.100000.adapter_rounding.baseline_normalized.detection_share": null,
+  "rq2drift.100000.adapter_rounding.baseline_normalized.false_alarms": 0,
+  "rq2drift.100000.adapter_rounding.baseline_normalized.flagged": 0,
+  "rq2drift.100000.adapter_rounding.baseline_normalized.flaggedAffected": 0,
+  "rq2drift.100000.adapter_rounding.baseline_normalized.newly_affected": 0,
+  "rq2drift.100000.adapter_rounding.baseline_normalized.outcomeChanged": 0,
+  "rq2drift.100000.adapter_rounding.baseline_parsed.affected": 53006,
+  "rq2drift.100000.adapter_rounding.baseline_parsed.detection_share": 0.0,
+  "rq2drift.100000.adapter_rounding.baseline_parsed.false_alarms": 0,
+  "rq2drift.100000.adapter_rounding.baseline_parsed.flagged": 0,
+  "rq2drift.100000.adapter_rounding.baseline_parsed.flaggedAffected": 0,
+  "rq2drift.100000.adapter_rounding.baseline_parsed.newly_affected": 5187,
+  "rq2drift.100000.adapter_rounding.baseline_parsed.outcomeChanged": 14,
+  "rq2drift.100000.adapter_rounding.baseline_raw.affected": 0,
+  "rq2drift.100000.adapter_rounding.baseline_raw.detection_share": null,
+  "rq2drift.100000.adapter_rounding.baseline_raw.false_alarms": 0,
+  "rq2drift.100000.adapter_rounding.baseline_raw.flagged": 0,
+  "rq2drift.100000.adapter_rounding.baseline_raw.flaggedAffected": 0,
+  "rq2drift.100000.adapter_rounding.baseline_raw.newly_affected": 0,
+  "rq2drift.100000.adapter_rounding.baseline_raw.outcomeChanged": 0,
+  "rq2drift.100000.adapter_rounding.lineage.affected": 22682,
+  "rq2drift.100000.adapter_rounding.lineage.detection_share": 1.0,
+  "rq2drift.100000.adapter_rounding.lineage.false_alarms": 0,
+  "rq2drift.100000.adapter_rounding.lineage.flagged": 22682,
+  "rq2drift.100000.adapter_rounding.lineage.flaggedAffected": 22682,
+  "rq2drift.100000.adapter_rounding.lineage.newly_affected": 22682,
+  "rq2drift.100000.adapter_rounding.lineage.outcomeChanged": 14,
+  "rq2drift.100000.none.baseline_normalized.affected": 0,
+  "rq2drift.100000.none.baseline_normalized.detection_share": null,
+  "rq2drift.100000.none.baseline_normalized.false_alarms": 0,
+  "rq2drift.100000.none.baseline_normalized.flagged": 0,
+  "rq2drift.100000.none.baseline_normalized.flaggedAffected": 0,
+  "rq2drift.100000.none.baseline_normalized.newly_affected": 0,
+  "rq2drift.100000.none.baseline_normalized.outcomeChanged": 0,
+  "rq2drift.100000.none.baseline_parsed.affected": 47819,
+  "rq2drift.100000.none.baseline_parsed.detection_share": 0.0,
+  "rq2drift.100000.none.baseline_parsed.false_alarms": 0,
+  "rq2drift.100000.none.baseline_parsed.flagged": 0,
+  "rq2drift.100000.none.baseline_parsed.flaggedAffected": 0,
+  "rq2drift.100000.none.baseline_parsed.newly_affected": 0,
+  "rq2drift.100000.none.baseline_parsed.outcomeChanged": 0,
+  "rq2drift.100000.none.baseline_raw.affected": 0,
+  "rq2drift.100000.none.baseline_raw.detection_share": null,
+  "rq2drift.100000.none.baseline_raw.false_alarms": 0,
+  "rq2drift.100000.none.baseline_raw.flagged": 0,
+  "rq2drift.100000.none.baseline_raw.flaggedAffected": 0,
+  "rq2drift.100000.none.baseline_raw.newly_affected": 0,
+  "rq2drift.100000.none.baseline_raw.outcomeChanged": 0,
+  "rq2drift.100000.none.lineage.affected": 0,
+  "rq2drift.100000.none.lineage.detection_share": null,
+  "rq2drift.100000.none.lineage.false_alarms": 0,
+  "rq2drift.100000.none.lineage.flagged": 0,
+  "rq2drift.100000.none.lineage.flaggedAffected": 0,
+  "rq2drift.100000.none.lineage.newly_affected": 0,
+  "rq2drift.100000.none.lineage.outcomeChanged": 0,
+  "rq2drift.100000.quality_window.baseline_normalized.affected": 944,
+  "rq2drift.100000.quality_window.baseline_normalized.detection_share": 0.0,
+  "rq2drift.100000.quality_window.baseline_normalized.false_alarms": 0,
+  "rq2drift.100000.quality_window.baseline_normalized.flagged": 0,
+  "rq2drift.100000.quality_window.baseline_normalized.flaggedAffected": 0,
+  "rq2drift.100000.quality_window.baseline_normalized.newly_affected": 944,
+  "rq2drift.100000.quality_window.baseline_normalized.outcomeChanged": 5,
+  "rq2drift.100000.quality_window.baseline_parsed.affected": 48273,
+  "rq2drift.100000.quality_window.baseline_parsed.detection_share": 0.0,
+  "rq2drift.100000.quality_window.baseline_parsed.false_alarms": 0,
+  "rq2drift.100000.quality_window.baseline_parsed.flagged": 0,
+  "rq2drift.100000.quality_window.baseline_parsed.flaggedAffected": 0,
+  "rq2drift.100000.quality_window.baseline_parsed.newly_affected": 454,
+  "rq2drift.100000.quality_window.baseline_parsed.outcomeChanged": 5,
+  "rq2drift.100000.quality_window.baseline_raw.affected": 944,
+  "rq2drift.100000.quality_window.baseline_raw.detection_share": 0.0,
+  "rq2drift.100000.quality_window.baseline_raw.false_alarms": 0,
+  "rq2drift.100000.quality_window.baseline_raw.flagged": 0,
+  "rq2drift.100000.quality_window.baseline_raw.flaggedAffected": 0,
+  "rq2drift.100000.quality_window.baseline_raw.newly_affected": 944,
+  "rq2drift.100000.quality_window.baseline_raw.outcomeChanged": 5,
+  "rq2drift.100000.quality_window.lineage.affected": 944,
+  "rq2drift.100000.quality_window.lineage.detection_share": 1.0,
+  "rq2drift.100000.quality_window.lineage.false_alarms": 0,
+  "rq2drift.100000.quality_window.lineage.flagged": 944,
+  "rq2drift.100000.quality_window.lineage.flaggedAffected": 944,
+  "rq2drift.100000.quality_window.lineage.newly_affected": 944,
+  "rq2drift.100000.quality_window.lineage.outcomeChanged": 5,
   "rq3.bridge.10.bytes_per_decision_loaded": 7633.863736263736,
   "rq3.bridge.10.bytes_per_tenant_empty": 2520005.7,
   "rq3.bridge.10.bytes_per_tenant_loaded": 10161503.3,
