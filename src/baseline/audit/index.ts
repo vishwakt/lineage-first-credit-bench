@@ -9,6 +9,7 @@ import { bureauCAudit } from "./bureau_c.ts";
 import { rentXAudit } from "./rent_x.ts";
 import { utilityYAudit } from "./utility_y.ts";
 import { bankZAudit } from "./bank_z.ts";
+import { telecomTAudit } from "./telecom_t.ts";
 
 export const AUDITS: Partial<Record<SourceId, SourceAudit>> = {
   bureau_a: bureauAAudit,
@@ -17,6 +18,7 @@ export const AUDITS: Partial<Record<SourceId, SourceAudit>> = {
   rent_x: rentXAudit,
   utility_y: utilityYAudit,
   bank_z: bankZAudit,
+  telecom_t: telecomTAudit,
 };
 
 export function auditFor(source: SourceId): SourceAudit {
