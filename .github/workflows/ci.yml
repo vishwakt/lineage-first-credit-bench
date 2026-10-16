@@ -1,0 +1,29 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: postgres:17.6-alpine
+        env:
+          POSTGRES_USER: bench
+          POSTGRES_PASSWORD: bench
+          POSTGRES_DB: bench
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U bench" --health-interval 2s --health-retries 30
+    env:
+      PGHOST: localhost
+      PGPORT: "5432"
+      PGUSER: bench
+      PGPASSWORD: bench
+      PGDATABASE: bench
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: "24.14.0" }
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test

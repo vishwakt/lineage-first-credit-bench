@@ -1,0 +1,30 @@
+# Local benchmark stack. The password below protects a throwaway local database only.
+services:
+  db:
+    image: postgres:17.6-alpine
+    environment:
+      POSTGRES_USER: bench
+      POSTGRES_PASSWORD: bench
+      POSTGRES_DB: bench
+    command: ["postgres", "-c", "max_connections=500", "-c", "shared_buffers=1GB", "-c", "work_mem=16MB"]
+    ports: ["55432:5432"]
+    shm_size: 1gb
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bench"]
+      interval: 2s
+      retries: 30
+  bench:
+    build: .
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      PGHOST: db
+      PGPORT: "5432"
+      PGUSER: bench
+      PGPASSWORD: bench
+      PGDATABASE: bench
+    volumes: ["./results:/app/results"]
+    command: ["npm", "test"]
+volumes:
+  pgdata:

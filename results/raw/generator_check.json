@@ -1,0 +1,41 @@
+{
+  "seed": 20261015,
+  "consumers": 400000,
+  "determinism": {
+    "sampleConsumers": 2000,
+    "dates": [
+      "2025-02-10",
+      "2025-06-20",
+      "2025-10-10"
+    ],
+    "digestA": "71f0357688bfab6d7f30dc04fb332bb563c59b2480abb07dc188d98df5ca3b48",
+    "digestB": "71f0357688bfab6d7f30dc04fb332bb563c59b2480abb07dc188d98df5ca3b48",
+    "identical": true,
+    "differentSeedDiffers": true
+  },
+  "faultRates": {
+    "missed": {
+      "eligible": 11028376,
+      "injected": 110522,
+      "observed": 0.010021602455338846,
+      "configured": 0.01,
+      "relativeError": 0.0021602455338845528
+    },
+    "double": {
+      "eligible": 11282880,
+      "injected": 112951,
+      "observed": 0.010010830568081908,
+      "configured": 0.01,
+      "relativeError": 0.001083056808190777
+    },
+    "timing": {
+      "eligible": 11028376,
+      "injected": 110570,
+      "observed": 0.010025954864070648,
+      "configured": 0.01,
+      "relativeError": 0.0025954864070648273
+    }
+  },
+  "withinOnePercent": true,
+  "seconds": 38.146
+}

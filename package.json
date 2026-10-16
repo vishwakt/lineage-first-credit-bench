@@ -1,0 +1,23 @@
+{
+  "name": "lineage-first-credit-bench",
+  "version": "0.1.0",
+  "description": "Open reference implementation and benchmark of lineage-first ingestion for multi-tenant credit data (synthetic data only)",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=24.14" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --test-concurrency=1 \"test/**/*.test.ts\"",
+    "generate": "node src/generator/cli.ts"
+  },
+  "dependencies": {
+    "fast-xml-parser": "5.3.0",
+    "pg": "8.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/pg": "8.15.6",
+    "typescript": "5.9.3"
+  }
+}
