@@ -5,10 +5,12 @@ import type { SourceId } from "../../core/types.ts";
 import type { SourceAudit } from "./types.ts";
 import { bureauAAudit } from "./bureau_a.ts";
 import { bureauBAudit } from "./bureau_b.ts";
+import { bureauCAudit } from "./bureau_c.ts";
 
 export const AUDITS: Partial<Record<SourceId, SourceAudit>> = {
   bureau_a: bureauAAudit,
   bureau_b: bureauBAudit,
+  bureau_c: bureauCAudit,
 };
 
 export function auditFor(source: SourceId): SourceAudit {
