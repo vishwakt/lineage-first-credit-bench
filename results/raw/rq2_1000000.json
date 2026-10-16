@@ -1,0 +1,263 @@
+{
+  "size": 1000000,
+  "replayNow": "2026-01-01",
+  "designs": [
+    "lineage",
+    "baseline_parsed",
+    "baseline_normalized",
+    "baseline_raw"
+  ],
+  "buildSeconds": 2002.2064152920002,
+  "workers": 8,
+  "sample": 1000,
+  "warmup": 200,
+  "storage": {
+    "lineage": {
+      "totalBytes": 7733510144,
+      "bytesPerDecision": 7733.510144
+    },
+    "baseline_parsed": {
+      "totalBytes": 8896962560,
+      "bytesPerDecision": 8896.96256
+    },
+    "baseline_normalized": {
+      "totalBytes": 7802413056,
+      "bytesPerDecision": 7802.413056
+    },
+    "baseline_raw": {
+      "totalBytes": 11567505408,
+      "bytesPerDecision": 11567.505408
+    }
+  },
+  "rawBytesPerDecision": 7695.063182,
+  "fidelity": {
+    "lineage": {
+      "refdata_drift": {
+        "decisions": 619676,
+        "replayed": 619676,
+        "rawExact": 619676,
+        "modelInputExact": 619676,
+        "outcomeEqual": 619676,
+        "decisionEqual": 619676,
+        "integrityVerified": 619676
+      },
+      "no_drift": {
+        "decisions": 333821,
+        "replayed": 333821,
+        "rawExact": 333821,
+        "modelInputExact": 333821,
+        "outcomeEqual": 333821,
+        "decisionEqual": 333821,
+        "integrityVerified": 333821
+      },
+      "format_drift_only": {
+        "decisions": 46503,
+        "replayed": 46503,
+        "rawExact": 46503,
+        "modelInputExact": 46503,
+        "outcomeEqual": 46503,
+        "decisionEqual": 46503,
+        "integrityVerified": 46503
+      }
+    },
+    "baseline_parsed": {
+      "refdata_drift": {
+        "decisions": 619676,
+        "replayed": 619676,
+        "rawExact": 0,
+        "modelInputExact": 143300,
+        "outcomeEqual": 619676,
+        "decisionEqual": 262044,
+        "integrityVerified": 0
+      },
+      "no_drift": {
+        "decisions": 333821,
+        "replayed": 333821,
+        "rawExact": 0,
+        "modelInputExact": 333821,
+        "outcomeEqual": 333821,
+        "decisionEqual": 333821,
+        "integrityVerified": 0
+      },
+      "format_drift_only": {
+        "decisions": 46503,
+        "replayed": 46503,
+        "rawExact": 0,
+        "modelInputExact": 46503,
+        "outcomeEqual": 46503,
+        "decisionEqual": 46503,
+        "integrityVerified": 0
+      }
+    },
+    "baseline_normalized": {
+      "refdata_drift": {
+        "decisions": 619676,
+        "replayed": 619676,
+        "rawExact": 0,
+        "modelInputExact": 619676,
+        "outcomeEqual": 619676,
+        "decisionEqual": 619676,
+        "integrityVerified": 0
+      },
+      "no_drift": {
+        "decisions": 333821,
+        "replayed": 333821,
+        "rawExact": 0,
+        "modelInputExact": 333821,
+        "outcomeEqual": 333821,
+        "decisionEqual": 333821,
+        "integrityVerified": 0
+      },
+      "format_drift_only": {
+        "decisions": 46503,
+        "replayed": 46503,
+        "rawExact": 0,
+        "modelInputExact": 46503,
+        "outcomeEqual": 46503,
+        "decisionEqual": 46503,
+        "integrityVerified": 0
+      }
+    },
+    "baseline_raw": {
+      "refdata_drift": {
+        "decisions": 619676,
+        "replayed": 619676,
+        "rawExact": 619676,
+        "modelInputExact": 619676,
+        "outcomeEqual": 619676,
+        "decisionEqual": 619676,
+        "integrityVerified": 0
+      },
+      "no_drift": {
+        "decisions": 333821,
+        "replayed": 333821,
+        "rawExact": 333821,
+        "modelInputExact": 333821,
+        "outcomeEqual": 333821,
+        "decisionEqual": 333821,
+        "integrityVerified": 0
+      },
+      "format_drift_only": {
+        "decisions": 46503,
+        "replayed": 46503,
+        "rawExact": 46503,
+        "modelInputExact": 46503,
+        "outcomeEqual": 46503,
+        "decisionEqual": 46503,
+        "integrityVerified": 0
+      }
+    }
+  },
+  "latencyRuns": [
+    {
+      "lineage": {
+        "p50": 2.0141455000266433,
+        "p99": 3.542627320149913,
+        "mean": 2.096084171982482
+      },
+      "baseline_parsed": {
+        "p50": 4.922812500037253,
+        "p99": 7.922403839994219,
+        "mean": 5.256074111978523
+      },
+      "baseline_normalized": {
+        "p50": 4.716041499748826,
+        "p99": 7.052632909715175,
+        "mean": 5.025502202992327
+      },
+      "baseline_raw": {
+        "p50": 4.609186999965459,
+        "p99": 7.052560830228031,
+        "mean": 4.635181971999817
+      }
+    },
+    {
+      "baseline_parsed": {
+        "p50": 5.816187500022352,
+        "p99": 8.638943419903503,
+        "mean": 5.942624576014467
+      },
+      "baseline_normalized": {
+        "p50": 5.470124999992549,
+        "p99": 7.602690089605747,
+        "mean": 5.427070318977348
+      },
+      "baseline_raw": {
+        "p50": 5.153083499986678,
+        "p99": 7.690616249563172,
+        "mean": 5.167228461992927
+      },
+      "lineage": {
+        "p50": 2.3212294997647405,
+        "p99": 3.616723749712109,
+        "mean": 2.4439008659943937
+      }
+    },
+    {
+      "baseline_normalized": {
+        "p50": 5.287625000346452,
+        "p99": 7.327490660641342,
+        "mean": 5.236913973993622
+      },
+      "baseline_raw": {
+        "p50": 5.344541500322521,
+        "p99": 7.589288840005174,
+        "mean": 5.302798715009354
+      },
+      "lineage": {
+        "p50": 2.260604000184685,
+        "p99": 3.967214580178261,
+        "mean": 2.4385389689933508
+      },
+      "baseline_parsed": {
+        "p50": 5.373521000146866,
+        "p99": 7.3606516599934535,
+        "mean": 5.364990745006129
+      }
+    },
+    {
+      "baseline_raw": {
+        "p50": 4.42587500018999,
+        "p99": 7.281440999116748,
+        "mean": 4.542985546992161
+      },
+      "lineage": {
+        "p50": 2.2609374998137355,
+        "p99": 3.725345420055091,
+        "mean": 2.402621243012138
+      },
+      "baseline_parsed": {
+        "p50": 4.786187500227243,
+        "p99": 7.107971160039305,
+        "mean": 4.8621935150045905
+      },
+      "baseline_normalized": {
+        "p50": 5.091374999843538,
+        "p99": 7.228732169670984,
+        "mean": 5.065796911003068
+      }
+    },
+    {
+      "lineage": {
+        "p50": 2.6129375002346933,
+        "p99": 4.219285830250009,
+        "mean": 2.730919630997814
+      },
+      "baseline_parsed": {
+        "p50": 5.134834000375122,
+        "p99": 7.208722500652073,
+        "mean": 5.017369009024463
+      },
+      "baseline_normalized": {
+        "p50": 5.242271000053734,
+        "p99": 7.274880090262741,
+        "mean": 5.206933627014048
+      },
+      "baseline_raw": {
+        "p50": 5.078875500243157,
+        "p99": 7.379409589730203,
+        "mean": 5.025302295009606
+      }
+    }
+  ]
+}

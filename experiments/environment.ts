@@ -20,7 +20,8 @@ const settings = (await c.query("SELECT name, setting FROM pg_settings WHERE nam
 await c.end();
 
 const commit = sh("git", ["rev-parse", "HEAD"]);
-const dirty = sh("git", ["status", "--porcelain", "--untracked-files=no"]) !== "";
+// Result files are this run's own output; only changes elsewhere make the tree dirty.
+const dirty = sh("git", ["status", "--porcelain", "--untracked-files=no", "--", ".", ":!results", ":!ENVIRONMENT.md"]) !== "";
 const lines = [
   "# Environment",
   "",

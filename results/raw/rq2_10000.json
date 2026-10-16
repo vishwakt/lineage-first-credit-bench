@@ -1,0 +1,263 @@
+{
+  "size": 10000,
+  "replayNow": "2026-01-01",
+  "designs": [
+    "lineage",
+    "baseline_parsed",
+    "baseline_normalized",
+    "baseline_raw"
+  ],
+  "buildSeconds": 19.369552708,
+  "workers": 8,
+  "sample": 1000,
+  "warmup": 200,
+  "storage": {
+    "lineage": {
+      "totalBytes": 76955648,
+      "bytesPerDecision": 7695.5648
+    },
+    "baseline_parsed": {
+      "totalBytes": 90120192,
+      "bytesPerDecision": 9012.0192
+    },
+    "baseline_normalized": {
+      "totalBytes": 78602240,
+      "bytesPerDecision": 7860.224
+    },
+    "baseline_raw": {
+      "totalBytes": 116080640,
+      "bytesPerDecision": 11608.064
+    }
+  },
+  "rawBytesPerDecision": 7657.5312,
+  "fidelity": {
+    "lineage": {
+      "refdata_drift": {
+        "decisions": 6263,
+        "replayed": 6263,
+        "rawExact": 6263,
+        "modelInputExact": 6263,
+        "outcomeEqual": 6263,
+        "decisionEqual": 6263,
+        "integrityVerified": 6263
+      },
+      "no_drift": {
+        "decisions": 3281,
+        "replayed": 3281,
+        "rawExact": 3281,
+        "modelInputExact": 3281,
+        "outcomeEqual": 3281,
+        "decisionEqual": 3281,
+        "integrityVerified": 3281
+      },
+      "format_drift_only": {
+        "decisions": 456,
+        "replayed": 456,
+        "rawExact": 456,
+        "modelInputExact": 456,
+        "outcomeEqual": 456,
+        "decisionEqual": 456,
+        "integrityVerified": 456
+      }
+    },
+    "baseline_parsed": {
+      "refdata_drift": {
+        "decisions": 6263,
+        "replayed": 6263,
+        "rawExact": 0,
+        "modelInputExact": 1491,
+        "outcomeEqual": 6263,
+        "decisionEqual": 2619,
+        "integrityVerified": 0
+      },
+      "no_drift": {
+        "decisions": 3281,
+        "replayed": 3281,
+        "rawExact": 0,
+        "modelInputExact": 3281,
+        "outcomeEqual": 3281,
+        "decisionEqual": 3281,
+        "integrityVerified": 0
+      },
+      "format_drift_only": {
+        "decisions": 456,
+        "replayed": 456,
+        "rawExact": 0,
+        "modelInputExact": 456,
+        "outcomeEqual": 456,
+        "decisionEqual": 456,
+        "integrityVerified": 0
+      }
+    },
+    "baseline_normalized": {
+      "refdata_drift": {
+        "decisions": 6263,
+        "replayed": 6263,
+        "rawExact": 0,
+        "modelInputExact": 6263,
+        "outcomeEqual": 6263,
+        "decisionEqual": 6263,
+        "integrityVerified": 0
+      },
+      "no_drift": {
+        "decisions": 3281,
+        "replayed": 3281,
+        "rawExact": 0,
+        "modelInputExact": 3281,
+        "outcomeEqual": 3281,
+        "decisionEqual": 3281,
+        "integrityVerified": 0
+      },
+      "format_drift_only": {
+        "decisions": 456,
+        "replayed": 456,
+        "rawExact": 0,
+        "modelInputExact": 456,
+        "outcomeEqual": 456,
+        "decisionEqual": 456,
+        "integrityVerified": 0
+      }
+    },
+    "baseline_raw": {
+      "refdata_drift": {
+        "decisions": 6263,
+        "replayed": 6263,
+        "rawExact": 6263,
+        "modelInputExact": 6263,
+        "outcomeEqual": 6263,
+        "decisionEqual": 6263,
+        "integrityVerified": 0
+      },
+      "no_drift": {
+        "decisions": 3281,
+        "replayed": 3281,
+        "rawExact": 3281,
+        "modelInputExact": 3281,
+        "outcomeEqual": 3281,
+        "decisionEqual": 3281,
+        "integrityVerified": 0
+      },
+      "format_drift_only": {
+        "decisions": 456,
+        "replayed": 456,
+        "rawExact": 456,
+        "modelInputExact": 456,
+        "outcomeEqual": 456,
+        "decisionEqual": 456,
+        "integrityVerified": 0
+      }
+    }
+  },
+  "latencyRuns": [
+    {
+      "lineage": {
+        "p50": 1.1345209999999497,
+        "p99": 4.902757089997465,
+        "mean": 1.3285169160000079
+      },
+      "baseline_parsed": {
+        "p50": 1.976458500001172,
+        "p99": 2.6111924099981842,
+        "mean": 1.9905275320000582
+      },
+      "baseline_normalized": {
+        "p50": 1.9688749999986612,
+        "p99": 2.192063660002386,
+        "mean": 1.974391873000044
+      },
+      "baseline_raw": {
+        "p50": 2.0243120000013732,
+        "p99": 2.313267500000584,
+        "mean": 2.070922367000123
+      }
+    },
+    {
+      "baseline_parsed": {
+        "p50": 1.953208499999164,
+        "p99": 2.210696250005057,
+        "mean": 1.9564213420001832
+      },
+      "baseline_normalized": {
+        "p50": 1.913250000001426,
+        "p99": 2.1414546699995842,
+        "mean": 1.9046173369999377
+      },
+      "baseline_raw": {
+        "p50": 2.0839580000028946,
+        "p99": 5.845463919999453,
+        "mean": 2.1912036249999653
+      },
+      "lineage": {
+        "p50": 1.0435419999994338,
+        "p99": 1.3738770899988593,
+        "mean": 1.0581218179999852
+      }
+    },
+    {
+      "baseline_normalized": {
+        "p50": 2.0290620000014314,
+        "p99": 4.368708670003179,
+        "mean": 2.128393039000075
+      },
+      "baseline_raw": {
+        "p50": 2.015832999997656,
+        "p99": 2.379051330001093,
+        "mean": 2.0257756539999536
+      },
+      "lineage": {
+        "p50": 1.0150624999951106,
+        "p99": 1.4913359199916878,
+        "mean": 1.0299259320000564
+      },
+      "baseline_parsed": {
+        "p50": 1.8907499999986612,
+        "p99": 2.2091634200114636,
+        "mean": 1.8831651230001736
+      }
+    },
+    {
+      "baseline_raw": {
+        "p50": 2.02647949999664,
+        "p99": 2.2899217600024713,
+        "mean": 2.0306615740000127
+      },
+      "lineage": {
+        "p50": 1.0277085000052466,
+        "p99": 1.2907221700005176,
+        "mean": 1.0388116690001044
+      },
+      "baseline_parsed": {
+        "p50": 1.892374999995809,
+        "p99": 3.515802590000239,
+        "mean": 1.9852246700000686
+      },
+      "baseline_normalized": {
+        "p50": 1.9649789999966742,
+        "p99": 3.107215329996688,
+        "mean": 1.9895562199999404
+      }
+    },
+    {
+      "lineage": {
+        "p50": 1.0105624999996508,
+        "p99": 1.346511500001652,
+        "mean": 1.01981578800024
+      },
+      "baseline_parsed": {
+        "p50": 1.946021000003384,
+        "p99": 2.1972178299997176,
+        "mean": 1.9526729929998254
+      },
+      "baseline_normalized": {
+        "p50": 1.8288124999962747,
+        "p99": 2.3718119099990873,
+        "mean": 1.860452719999914
+      },
+      "baseline_raw": {
+        "p50": 1.9872289999912027,
+        "p99": 2.471253579998447,
+        "mean": 1.999840005000151
+      }
+    }
+  ]
+}

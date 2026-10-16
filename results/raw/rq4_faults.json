@@ -1,0 +1,103 @@
+{
+  "decisions": 50000,
+  "faultRates": {
+    "missed": 0.01,
+    "double": 0.01,
+    "timing": 0.01
+  },
+  "stats": {
+    "off": {
+      "injected": {
+        "timing": 14007,
+        "double": 14027,
+        "missed": 13968
+      },
+      "caught": {},
+      "escaped": {
+        "timing": 14007,
+        "double": 14027,
+        "missed": 13968
+      },
+      "unreconciled": 0,
+      "quarantined": 0,
+      "falseQuarantines": 0,
+      "altRecords": 1411788,
+      "outcomeDiffers": 480,
+      "outcomeDiffersWithFault": 480,
+      "decisionsWithFault": 27656
+    },
+    "xval": {
+      "injected": {
+        "timing": 14007,
+        "double": 14027,
+        "missed": 13968
+      },
+      "caught": {
+        "timing": 12038,
+        "double": 14027,
+        "missed": 12265
+      },
+      "escaped": {
+        "timing": 1969,
+        "missed": 1703
+      },
+      "unreconciled": 0,
+      "quarantined": 38525,
+      "falseQuarantines": 191,
+      "altRecords": 1411788,
+      "outcomeDiffers": 61,
+      "outcomeDiffersWithFault": 61,
+      "decisionsWithFault": 27656
+    },
+    "xval_anomaly": {
+      "injected": {
+        "timing": 14007,
+        "double": 14027,
+        "missed": 13968
+      },
+      "caught": {
+        "timing": 12697,
+        "double": 14027,
+        "missed": 12954
+      },
+      "escaped": {
+        "timing": 1310,
+        "missed": 1014
+      },
+      "unreconciled": 0,
+      "quarantined": 49109,
+      "falseQuarantines": 9326,
+      "altRecords": 1411788,
+      "outcomeDiffers": 161,
+      "outcomeDiffersWithFault": 102,
+      "decisionsWithFault": 27656
+    }
+  },
+  "latency": {
+    "decisionsPerRun": 5000,
+    "runs": 5,
+    "microsecondsPerDecision": {
+      "off": [
+        396.7656750000024,
+        398.14040000000097,
+        393.93612500000165,
+        394.1445831999998,
+        401.3487666000001
+      ],
+      "xval": [
+        405.9861249999987,
+        421.92386660000193,
+        403.27185839999873,
+        401.8042665999994,
+        411.3008000000002
+      ],
+      "xval_anomaly": [
+        417.7227916000004,
+        420.2937250000017,
+        401.2218583999987,
+        408.77265839999893,
+        409.1362250000006
+      ]
+    }
+  }
+}

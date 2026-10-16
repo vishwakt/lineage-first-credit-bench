@@ -1,0 +1,263 @@
+{
+  "size": 100000,
+  "replayNow": "2026-01-01",
+  "designs": [
+    "lineage",
+    "baseline_parsed",
+    "baseline_normalized",
+    "baseline_raw"
+  ],
+  "buildSeconds": 221.608320125,
+  "workers": 8,
+  "sample": 1000,
+  "warmup": 200,
+  "storage": {
+    "lineage": {
+      "totalBytes": 771170304,
+      "bytesPerDecision": 7711.70304
+    },
+    "baseline_parsed": {
+      "totalBytes": 891256832,
+      "bytesPerDecision": 8912.56832
+    },
+    "baseline_normalized": {
+      "totalBytes": 779821056,
+      "bytesPerDecision": 7798.21056
+    },
+    "baseline_raw": {
+      "totalBytes": 1157242880,
+      "bytesPerDecision": 11572.4288
+    }
+  },
+  "rawBytesPerDecision": 7677.42458,
+  "fidelity": {
+    "lineage": {
+      "refdata_drift": {
+        "decisions": 62229,
+        "replayed": 62229,
+        "rawExact": 62229,
+        "modelInputExact": 62229,
+        "outcomeEqual": 62229,
+        "decisionEqual": 62229,
+        "integrityVerified": 62229
+      },
+      "no_drift": {
+        "decisions": 33142,
+        "replayed": 33142,
+        "rawExact": 33142,
+        "modelInputExact": 33142,
+        "outcomeEqual": 33142,
+        "decisionEqual": 33142,
+        "integrityVerified": 33142
+      },
+      "format_drift_only": {
+        "decisions": 4629,
+        "replayed": 4629,
+        "rawExact": 4629,
+        "modelInputExact": 4629,
+        "outcomeEqual": 4629,
+        "decisionEqual": 4629,
+        "integrityVerified": 4629
+      }
+    },
+    "baseline_parsed": {
+      "refdata_drift": {
+        "decisions": 62229,
+        "replayed": 62229,
+        "rawExact": 0,
+        "modelInputExact": 14410,
+        "outcomeEqual": 62229,
+        "decisionEqual": 26127,
+        "integrityVerified": 0
+      },
+      "no_drift": {
+        "decisions": 33142,
+        "replayed": 33142,
+        "rawExact": 0,
+        "modelInputExact": 33142,
+        "outcomeEqual": 33142,
+        "decisionEqual": 33142,
+        "integrityVerified": 0
+      },
+      "format_drift_only": {
+        "decisions": 4629,
+        "replayed": 4629,
+        "rawExact": 0,
+        "modelInputExact": 4629,
+        "outcomeEqual": 4629,
+        "decisionEqual": 4629,
+        "integrityVerified": 0
+      }
+    },
+    "baseline_normalized": {
+      "refdata_drift": {
+        "decisions": 62229,
+        "replayed": 62229,
+        "rawExact": 0,
+        "modelInputExact": 62229,
+        "outcomeEqual": 62229,
+        "decisionEqual": 62229,
+        "integrityVerified": 0
+      },
+      "no_drift": {
+        "decisions": 33142,
+        "replayed": 33142,
+        "rawExact": 0,
+        "modelInputExact": 33142,
+        "outcomeEqual": 33142,
+        "decisionEqual": 33142,
+        "integrityVerified": 0
+      },
+      "format_drift_only": {
+        "decisions": 4629,
+        "replayed": 4629,
+        "rawExact": 0,
+        "modelInputExact": 4629,
+        "outcomeEqual": 4629,
+        "decisionEqual": 4629,
+        "integrityVerified": 0
+      }
+    },
+    "baseline_raw": {
+      "refdata_drift": {
+        "decisions": 62229,
+        "replayed": 62229,
+        "rawExact": 62229,
+        "modelInputExact": 62229,
+        "outcomeEqual": 62229,
+        "decisionEqual": 62229,
+        "integrityVerified": 0
+      },
+      "no_drift": {
+        "decisions": 33142,
+        "replayed": 33142,
+        "rawExact": 33142,
+        "modelInputExact": 33142,
+        "outcomeEqual": 33142,
+        "decisionEqual": 33142,
+        "integrityVerified": 0
+      },
+      "format_drift_only": {
+        "decisions": 4629,
+        "replayed": 4629,
+        "rawExact": 4629,
+        "modelInputExact": 4629,
+        "outcomeEqual": 4629,
+        "decisionEqual": 4629,
+        "integrityVerified": 0
+      }
+    }
+  },
+  "latencyRuns": [
+    {
+      "lineage": {
+        "p50": 1.3010210000211373,
+        "p99": 4.518358330001352,
+        "mean": 1.6385793850006303
+      },
+      "baseline_parsed": {
+        "p50": 2.104437500005588,
+        "p99": 7.278484500047051,
+        "mean": 2.3095667989999056
+      },
+      "baseline_normalized": {
+        "p50": 2.1255624999757856,
+        "p99": 4.949024499926017,
+        "mean": 2.2795210720007306
+      },
+      "baseline_raw": {
+        "p50": 2.052520499972161,
+        "p99": 2.828832499985583,
+        "mean": 2.0712882830002344
+      }
+    },
+    {
+      "baseline_parsed": {
+        "p50": 2.033604500000365,
+        "p99": 3.580344579966039,
+        "mean": 2.1366186969961274
+      },
+      "baseline_normalized": {
+        "p50": 2.086645999981556,
+        "p99": 6.078001989910841,
+        "mean": 2.2790293850008165
+      },
+      "baseline_raw": {
+        "p50": 2.054188000038266,
+        "p99": 3.7925759199843734,
+        "mean": 2.100793600001256
+      },
+      "lineage": {
+        "p50": 1.0720830000354908,
+        "p99": 1.8580354099662506,
+        "mean": 1.1591939409963088
+      }
+    },
+    {
+      "baseline_normalized": {
+        "p50": 2.017500000016298,
+        "p99": 3.2210958400939123,
+        "mean": 2.067835755998967
+      },
+      "baseline_raw": {
+        "p50": 2.057542000024114,
+        "p99": 2.303902829934377,
+        "mean": 2.054120350002078
+      },
+      "lineage": {
+        "p50": 1.0748125000391155,
+        "p99": 1.7981908299727365,
+        "mean": 1.1529241109989816
+      },
+      "baseline_parsed": {
+        "p50": 2.0651249999646097,
+        "p99": 3.8128425000002606,
+        "mean": 2.175801630999893
+      }
+    },
+    {
+      "baseline_raw": {
+        "p50": 2.2550204999861307,
+        "p99": 11.363731329939313,
+        "mean": 2.9740536459991707
+      },
+      "lineage": {
+        "p50": 1.5050204999861307,
+        "p99": 17.21358967000502,
+        "mean": 2.39224237999809
+      },
+      "baseline_parsed": {
+        "p50": 2.0483334999880753,
+        "p99": 4.406507499988651,
+        "mean": 2.157664861000725
+      },
+      "baseline_normalized": {
+        "p50": 2.0903754999744706,
+        "p99": 8.23391167007503,
+        "mean": 2.413817648001248
+      }
+    },
+    {
+      "lineage": {
+        "p50": 1.0836455000098795,
+        "p99": 1.8473555899539496,
+        "mean": 1.1434641629996476
+      },
+      "baseline_parsed": {
+        "p50": 2.0343749999883585,
+        "p99": 5.340019170016745,
+        "mean": 2.1951894999984654
+      },
+      "baseline_normalized": {
+        "p50": 2.0316040000179783,
+        "p99": 5.110278570010558,
+        "mean": 2.138301682999474
+      },
+      "baseline_raw": {
+        "p50": 2.112125499988906,
+        "p99": 4.128870830039958,
+        "mean": 2.2041273729990936
+      }
+    }
+  ]
+}
