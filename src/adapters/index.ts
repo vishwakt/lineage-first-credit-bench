@@ -7,6 +7,7 @@ import { bureauB } from "./bureau_b.ts";
 import { bureauC } from "./bureau_c.ts";
 import { rentX } from "./rent_x.ts";
 import { utilityY } from "./utility_y.ts";
+import { bankZ } from "./bank_z.ts";
 
 export const ADAPTERS: Partial<Record<SourceId, Adapter>> = {
   bureau_a: bureauA,
@@ -14,6 +15,7 @@ export const ADAPTERS: Partial<Record<SourceId, Adapter>> = {
   bureau_c: bureauC,
   rent_x: rentX,
   utility_y: utilityY,
+  bank_z: bankZ,
 };
 
 export function adapterFor(source: SourceId): Adapter {
