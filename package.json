@@ -9,7 +9,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --test --test-concurrency=1 \"test/**/*.test.ts\"",
-    "generate": "node src/generator/cli.ts"
+    "reproduce": "sh scripts/reproduce.sh"
   },
   "dependencies": {
     "fast-xml-parser": "5.3.0",

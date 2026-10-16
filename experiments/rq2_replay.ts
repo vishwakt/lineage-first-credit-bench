@@ -84,7 +84,8 @@ const sizes = process.argv.slice(2).map(Number);
 mkdirSync("results/raw", { recursive: true });
 for (const size of sizes) {
   let buildSeconds: number | null = null;
-  if ((await count(harnessDb(size), "SELECT count(*) AS n FROM truth")) !== size) {
+  // FRESH=1 rebuilds the corpus even if one exists, so results always come from this commit.
+  if (process.env.FRESH === "1" || (await count(harnessDb(size), "SELECT count(*) AS n FROM truth")) !== size) {
     console.log(`building corpus of ${size}`);
     await prepare(size);
     buildSeconds = await build(size, WORKERS);
