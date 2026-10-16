@@ -1,0 +1,445 @@
+{
+  "generated": "git diff --numstat between rq1-s(N-1) and rq1-sN",
+  "steps": [
+    {
+      "n": 1,
+      "from": "rq1-s0",
+      "to": "rq1-s1",
+      "commit": "30b2e92e3c83f9aee2126d8cb91362d58a73e0fc",
+      "files": [
+        {
+          "file": "migrations/baseline/101_bureau_a.sql",
+          "added": 21,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/adapters/bureau_a.ts",
+          "added": 48,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/adapters/index.ts",
+          "added": 4,
+          "deleted": 1,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/baseline/audit/bureau_a.ts",
+          "added": 8,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/baseline/audit/index.ts",
+          "added": 4,
+          "deleted": 1,
+          "bucket": "baseline"
+        }
+      ],
+      "lineage": {
+        "filesTouched": 2,
+        "filesCreated": 1,
+        "linesChanged": 53,
+        "modulesModified": 1,
+        "specificFiles": 0,
+        "specificLines": 0
+      },
+      "baseline": {
+        "filesTouched": 5,
+        "filesCreated": 3,
+        "linesChanged": 87,
+        "modulesModified": 3,
+        "specificFiles": 3,
+        "specificLines": 34
+      },
+      "other": []
+    },
+    {
+      "n": 2,
+      "from": "rq1-s1",
+      "to": "rq1-s2",
+      "commit": "b77a6ebb8472a7ebaa116d7a3d57bfbc6d0f3472",
+      "files": [
+        {
+          "file": "migrations/baseline/102_bureau_b.sql",
+          "added": 22,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/adapters/bureau_b.ts",
+          "added": 52,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/adapters/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/baseline/audit/bureau_b.ts",
+          "added": 8,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/baseline/audit/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "baseline"
+        }
+      ],
+      "lineage": {
+        "filesTouched": 2,
+        "filesCreated": 1,
+        "linesChanged": 54,
+        "modulesModified": 1,
+        "specificFiles": 0,
+        "specificLines": 0
+      },
+      "baseline": {
+        "filesTouched": 5,
+        "filesCreated": 3,
+        "linesChanged": 86,
+        "modulesModified": 3,
+        "specificFiles": 3,
+        "specificLines": 32
+      },
+      "other": []
+    },
+    {
+      "n": 3,
+      "from": "rq1-s2",
+      "to": "rq1-s3",
+      "commit": "bc0e296cfd65adfb803bc51fac3e9ee0bf0f8623",
+      "files": [
+        {
+          "file": "migrations/baseline/103_bureau_c.sql",
+          "added": 21,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/adapters/bureau_c.ts",
+          "added": 46,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/adapters/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/baseline/audit/bureau_c.ts",
+          "added": 11,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/baseline/audit/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "baseline"
+        }
+      ],
+      "lineage": {
+        "filesTouched": 2,
+        "filesCreated": 1,
+        "linesChanged": 48,
+        "modulesModified": 1,
+        "specificFiles": 0,
+        "specificLines": 0
+      },
+      "baseline": {
+        "filesTouched": 5,
+        "filesCreated": 3,
+        "linesChanged": 82,
+        "modulesModified": 3,
+        "specificFiles": 3,
+        "specificLines": 34
+      },
+      "other": []
+    },
+    {
+      "n": 4,
+      "from": "rq1-s3",
+      "to": "rq1-s4",
+      "commit": "075b3bbb053f28a3ef765f2b8ec415820d42b05f",
+      "files": [
+        {
+          "file": "migrations/baseline/104_rent_x.sql",
+          "added": 20,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/adapters/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/adapters/rent_x.ts",
+          "added": 30,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/baseline/audit/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/baseline/audit/rent_x.ts",
+          "added": 8,
+          "deleted": 0,
+          "bucket": "baseline"
+        }
+      ],
+      "lineage": {
+        "filesTouched": 2,
+        "filesCreated": 1,
+        "linesChanged": 32,
+        "modulesModified": 1,
+        "specificFiles": 0,
+        "specificLines": 0
+      },
+      "baseline": {
+        "filesTouched": 5,
+        "filesCreated": 3,
+        "linesChanged": 62,
+        "modulesModified": 3,
+        "specificFiles": 3,
+        "specificLines": 30
+      },
+      "other": []
+    },
+    {
+      "n": 5,
+      "from": "rq1-s4",
+      "to": "rq1-s5",
+      "commit": "4f47a2f47b36228a4576871d0aeea20b1830b4f1",
+      "files": [
+        {
+          "file": "migrations/baseline/105_utility_y.sql",
+          "added": 19,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/adapters/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/adapters/utility_y.ts",
+          "added": 29,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/baseline/audit/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/baseline/audit/utility_y.ts",
+          "added": 8,
+          "deleted": 0,
+          "bucket": "baseline"
+        }
+      ],
+      "lineage": {
+        "filesTouched": 2,
+        "filesCreated": 1,
+        "linesChanged": 31,
+        "modulesModified": 1,
+        "specificFiles": 0,
+        "specificLines": 0
+      },
+      "baseline": {
+        "filesTouched": 5,
+        "filesCreated": 3,
+        "linesChanged": 60,
+        "modulesModified": 3,
+        "specificFiles": 3,
+        "specificLines": 29
+      },
+      "other": []
+    },
+    {
+      "n": 6,
+      "from": "rq1-s5",
+      "to": "rq1-s6",
+      "commit": "66166646ff37d2049b8a4bd041141681a7fe00c6",
+      "files": [
+        {
+          "file": "migrations/baseline/106_bank_z.sql",
+          "added": 21,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/adapters/bank_z.ts",
+          "added": 24,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/adapters/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/baseline/audit/bank_z.ts",
+          "added": 8,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/baseline/audit/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "baseline"
+        }
+      ],
+      "lineage": {
+        "filesTouched": 2,
+        "filesCreated": 1,
+        "linesChanged": 26,
+        "modulesModified": 1,
+        "specificFiles": 0,
+        "specificLines": 0
+      },
+      "baseline": {
+        "filesTouched": 5,
+        "filesCreated": 3,
+        "linesChanged": 57,
+        "modulesModified": 3,
+        "specificFiles": 3,
+        "specificLines": 31
+      },
+      "other": []
+    },
+    {
+      "n": 7,
+      "from": "rq1-s6",
+      "to": "rq1-s7",
+      "commit": "e7d54bd89e1f322bf6c7a31d00de3aa3db03a68b",
+      "files": [
+        {
+          "file": "migrations/baseline/107_telecom_t.sql",
+          "added": 19,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/adapters/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/adapters/telecom_t.ts",
+          "added": 32,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/baseline/audit/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/baseline/audit/telecom_t.ts",
+          "added": 8,
+          "deleted": 0,
+          "bucket": "baseline"
+        }
+      ],
+      "lineage": {
+        "filesTouched": 2,
+        "filesCreated": 1,
+        "linesChanged": 34,
+        "modulesModified": 1,
+        "specificFiles": 0,
+        "specificLines": 0
+      },
+      "baseline": {
+        "filesTouched": 5,
+        "filesCreated": 3,
+        "linesChanged": 63,
+        "modulesModified": 3,
+        "specificFiles": 3,
+        "specificLines": 29
+      },
+      "other": []
+    },
+    {
+      "n": 8,
+      "from": "rq1-s7",
+      "to": "rq1-s8",
+      "commit": "40f53e82f76dda14310620049d3546700bb8829c",
+      "files": [
+        {
+          "file": "migrations/baseline/108_bnpl_q.sql",
+          "added": 19,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/adapters/bnpl_q.ts",
+          "added": 34,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/adapters/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "shared"
+        },
+        {
+          "file": "src/baseline/audit/bnpl_q.ts",
+          "added": 8,
+          "deleted": 0,
+          "bucket": "baseline"
+        },
+        {
+          "file": "src/baseline/audit/index.ts",
+          "added": 2,
+          "deleted": 0,
+          "bucket": "baseline"
+        }
+      ],
+      "lineage": {
+        "filesTouched": 2,
+        "filesCreated": 1,
+        "linesChanged": 36,
+        "modulesModified": 1,
+        "specificFiles": 0,
+        "specificLines": 0
+      },
+      "baseline": {
+        "filesTouched": 5,
+        "filesCreated": 3,
+        "linesChanged": 65,
+        "modulesModified": 3,
+        "specificFiles": 3,
+        "specificLines": 29
+      },
+      "other": []
+    }
+  ]
+}
