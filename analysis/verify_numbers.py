@@ -123,6 +123,11 @@ for path in sorted(glob.glob(os.path.join(RAW, "rq2_[0-9]*.json"))):
         for q in ("p50", "p99", "mean"):
             put_summary(f"rq2.{size}.{d}.latency_ms.{q}", [run[d][q] for run in r["latencyRuns"]])
     check(f"rq2 {size}: at least 5 latency runs", len(r["latencyRuns"]) >= 5)
+    put(f"rq2.{size}.size", size)
+    put(f"rq2.{size}.latency_runs", len(r["latencyRuns"]))
+    put(f"rq2.{size}.latency_sample", r["sample"])
+    put(f"rq2.{size}.latency_warmup", r["warmup"])
+    put(f"rq2.{size}.sources_per_decision", 8)
 
 # RQ2 extension: pipeline code drift
 for path in sorted(glob.glob(os.path.join(RAW, "rq2_code_drift_*.json"))):
@@ -170,6 +175,22 @@ for row in r3["results"]:
           all(v["blocked"] == v["attempts"] for k, v in row["isolation"]["summary"].items()
               if k.split("|")[0] in ("api_read", "api_replay", "scoped_query")))
     check(f"rq3 {row['mode']} {row['tenants']}: at least 5 throughput runs", len(row["throughput"]["decisionsPerSecond"]) >= 5)
+    put(f"{p}.tenants", row["tenants"])
+    put(f"{p}.high_perimeter_tenants", row["highPerimeterTenants"])
+    put(f"{p}.throughput_runs", row["throughput"]["runs"])
+    put(f"{p}.decisions_per_run", row["throughput"]["decisionsPerRun"])
+    put(f"{p}.concurrency", row["throughput"]["concurrency"])
+    put(f"{p}.isolation_attackers", row["isolation"]["attackers"])
+    put(f"{p}.isolation_db_level_blocked_share_high",
+        sum(row["isolation"]["summary"][f"{a}|high"]["blocked"] for a in ("forged_context", "credential_reuse"))
+        / sum(row["isolation"]["summary"][f"{a}|high"]["attempts"] for a in ("forged_context", "credential_reuse")))
+    put(f"{p}.isolation_db_level_blocked_share_standard",
+        sum(row["isolation"]["summary"][f"{a}|standard"]["blocked"] for a in ("forged_context", "credential_reuse"))
+        / sum(row["isolation"]["summary"][f"{a}|standard"]["attempts"] for a in ("forged_context", "credential_reuse")))
+    put(f"{p}.isolation_app_level_blocked_share",
+        sum(row["isolation"]["summary"][f"{a}|all"]["blocked"] for a in ("api_read", "api_replay", "scoped_query"))
+        / sum(row["isolation"]["summary"][f"{a}|all"]["attempts"] for a in ("api_read", "api_replay", "scoped_query")))
+    put(f"{p}.isolation_attempts_total", sum(v["attempts"] for k, v in row["isolation"]["summary"].items() if k.endswith("|all")))
 
 # RQ4
 r4 = load("rq4_faults.json")
@@ -183,6 +204,7 @@ for mode, st in r4["stats"].items():
     put(f"{p}.caught", caught)
     put(f"{p}.escaped", escaped)
     put(f"{p}.escape_share", escaped / injected)
+    put(f"{p}.caught_share", caught / injected)
     for t in st["injected"]:
         put(f"{p}.{t}.injected", st["injected"][t])
         put(f"{p}.{t}.escape_share", st["escaped"].get(t, 0) / st["injected"][t])
@@ -198,6 +220,13 @@ for mode, st in r4["stats"].items():
     put_summary(f"{p}.added_latency_us", [a - b for a, b in zip(lat, lat_off)])
     check(f"rq4 {mode}: every injected fault reconciles as caught or escaped", st["unreconciled"] == 0 and caught + escaped == injected)
 put("rq4.decisions", r4["decisions"])
+put("rq4.latency_runs", r4["latency"]["runs"])
+put("rq4.latency_decisions_per_run", r4["latency"]["decisionsPerRun"])
+for t, rate in r4["faultRates"].items():
+    put(f"rq4.fault_rate.{t}", rate)
+put("gen.max_relative_error", max(r["relativeError"] for r in g["faultRates"].values()))
+put("gen.min_eligible", min(r["eligible"] for r in g["faultRates"].values()))
+put("rq1.sources", len(r1["steps"]))
 
 os.makedirs(OUT, exist_ok=True)
 with open(os.path.join(OUT, "numbers.json"), "w") as f:

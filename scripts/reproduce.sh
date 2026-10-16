@@ -14,3 +14,4 @@ node experiments/rq4_faults.ts 50000
 node experiments/environment.ts
 python3 analysis/verify_numbers.py
 python3 analysis/plot_figures.py
+python3 analysis/plot_architecture.py
