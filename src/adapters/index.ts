@@ -3,9 +3,11 @@
 import type { SourceId } from "../core/types.ts";
 import type { Adapter } from "./types.ts";
 import { bureauA } from "./bureau_a.ts";
+import { bureauB } from "./bureau_b.ts";
 
 export const ADAPTERS: Partial<Record<SourceId, Adapter>> = {
   bureau_a: bureauA,
+  bureau_b: bureauB,
 };
 
 export function adapterFor(source: SourceId): Adapter {
