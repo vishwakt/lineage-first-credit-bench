@@ -15,12 +15,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 63.404832999999996
+          "ms": 73.41754200000003
         },
         {
           "tenantId": "t001",
@@ -32,12 +32,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.78375
+          "ms": 68.140625
         },
         {
           "tenantId": "t002",
@@ -49,12 +49,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 51.407667000000004
+          "ms": 71.59379100000001
         },
         {
           "tenantId": "t003",
@@ -66,12 +66,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 48.052167
+          "ms": 64.35254199999997
         },
         {
           "tenantId": "t004",
@@ -83,12 +83,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 51.222083000000055
+          "ms": 62.007833000000005
         },
         {
           "tenantId": "t005",
@@ -100,12 +100,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 50.46404200000006
+          "ms": 56.16879099999994
         },
         {
           "tenantId": "t006",
@@ -117,12 +117,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 50.15995900000007
+          "ms": 65.58524999999997
         },
         {
           "tenantId": "t007",
@@ -134,12 +134,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 50.91841699999998
+          "ms": 64.51658299999997
         },
         {
           "tenantId": "t008",
@@ -151,12 +151,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.69441699999993
+          "ms": 64.64862500000004
         },
         {
           "tenantId": "t009",
@@ -168,28 +168,43 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 47.756709
+          "ms": 62.08095900000001
         }
       ],
-      "emptyBytes": 84000190,
-      "loadedBytes": 159997722,
-      "decisionsStored": 10010,
+      "emptyBytes": 83847350,
+      "loadedBytes": 391989430,
+      "decisionsStored": 40010,
       "throughput": {
-        "runs": 5,
+        "runs": 20,
         "decisionsPerRun": 2000,
         "concurrency": 16,
         "connectionCeiling": 20,
         "decisionsPerSecond": [
-          2166.2558001499046,
-          2275.046915733114,
-          2310.8653052929317,
-          2357.209458833324,
-          2292.1138676327146
+          2299.5316246150796,
+          2416.450104911692,
+          2356.0099931294735,
+          2402.800462016241,
+          2311.5013952800314,
+          2355.249667504991,
+          2289.680229063549,
+          2438.854488338233,
+          2360.763636213408,
+          2346.9991269163297,
+          2385.157046533439,
+          2345.058675566559,
+          2413.197171063984,
+          2263.281928542539,
+          2397.8458960983817,
+          2418.7022533360673,
+          2393.460465727751,
+          2201.932231424571,
+          2303.119950229588,
+          2284.7483802667525
         ]
       },
       "isolation": {
@@ -272,7 +287,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.590416000000914
+          "ms": 6.516417000006186
         },
         {
           "tenantId": "t001",
@@ -283,7 +298,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.448958000000857
+          "ms": 4.84558300000208
         },
         {
           "tenantId": "t002",
@@ -294,7 +309,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.3602499999997235
+          "ms": 5.0949170000021695
         },
         {
           "tenantId": "t003",
@@ -305,7 +320,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.067291999999725
+          "ms": 5.6663749999934225
         },
         {
           "tenantId": "t004",
@@ -316,7 +331,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.0534999999999854
+          "ms": 4.976916999999958
         },
         {
           "tenantId": "t005",
@@ -327,7 +342,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 5.583416999999827
+          "ms": 4.2916669999976875
         },
         {
           "tenantId": "t006",
@@ -338,7 +353,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.876249999999345
+          "ms": 4.900166999999783
         },
         {
           "tenantId": "t007",
@@ -349,7 +364,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.7170420000002196
+          "ms": 4.4465000000054715
         },
         {
           "tenantId": "t008",
@@ -360,7 +375,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.557708000000275
+          "ms": 4.546042000001762
         },
         {
           "tenantId": "t009",
@@ -371,23 +386,38 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.566792000001442
+          "ms": 4.568417000002228
         }
       ],
-      "emptyBytes": 8400019,
-      "loadedBytes": 84413587,
-      "decisionsStored": 10010,
+      "emptyBytes": 8416403,
+      "loadedBytes": 315157651,
+      "decisionsStored": 40010,
       "throughput": {
-        "runs": 5,
+        "runs": 20,
         "decisionsPerRun": 2000,
         "concurrency": 16,
         "connectionCeiling": 16,
         "decisionsPerSecond": [
-          2188.7793973031976,
-          2301.922119356675,
-          2357.384385654243,
-          2281.3483299271484,
-          2223.676672306285
+          2331.7353003081294,
+          2366.3258812308463,
+          2365.9683848917975,
+          2395.312493216404,
+          2382.2653438083903,
+          2372.658667841136,
+          2396.752521130191,
+          2416.0456832296145,
+          2407.530033612154,
+          2373.157102307202,
+          2312.7767472269397,
+          2449.785521277609,
+          2448.721353680691,
+          2331.1050082989277,
+          2359.5381675944523,
+          2288.757786884701,
+          2311.6228462591002,
+          2266.3746631778067,
+          2445.009071747733,
+          2375.2657628449533
         ]
       },
       "isolation": {
@@ -471,12 +501,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 59.25966700000208
+          "ms": 64.45408299998962
         },
         {
           "tenantId": "t001",
@@ -488,12 +518,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.47245800000019
+          "ms": 68.68516599999566
         },
         {
           "tenantId": "t002",
@@ -504,7 +534,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2755419999994047
+          "ms": 4.823457999998936
         },
         {
           "tenantId": "t003",
@@ -515,7 +545,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2660829999986163
+          "ms": 4.1485000000102445
         },
         {
           "tenantId": "t004",
@@ -526,7 +556,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.129499999999098
+          "ms": 4.07629199999792
         },
         {
           "tenantId": "t005",
@@ -537,7 +567,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.1011250000010477
+          "ms": 4.82508300000336
         },
         {
           "tenantId": "t006",
@@ -548,7 +578,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.184332999997423
+          "ms": 4.18087499999092
         },
         {
           "tenantId": "t007",
@@ -559,7 +589,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9672910000008414
+          "ms": 5.136584000007133
         },
         {
           "tenantId": "t008",
@@ -570,7 +600,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.034665999999561
+          "ms": 4.252708999993047
         },
         {
           "tenantId": "t009",
@@ -581,23 +611,38 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9481250000026193
+          "ms": 5.032624999992549
         }
       ],
-      "emptyBytes": 25200057,
-      "loadedBytes": 101615033,
-      "decisionsStored": 10010,
+      "emptyBytes": 25249209,
+      "loadedBytes": 332236217,
+      "decisionsStored": 40010,
       "throughput": {
-        "runs": 5,
+        "runs": 20,
         "decisionsPerRun": 2000,
         "concurrency": 16,
         "connectionCeiling": 20,
         "decisionsPerSecond": [
-          2266.8541678468027,
-          2233.270708700551,
-          2318.272545147762,
-          2382.5261955032443,
-          2297.215129171693
+          2300.99949665636,
+          2424.3140517030665,
+          2402.1240791778628,
+          2303.3735929446566,
+          2194.4718071000543,
+          2329.1046156513858,
+          2412.4694505073285,
+          2384.7969205852232,
+          2467.823057703702,
+          2390.4227721196785,
+          2273.98981254381,
+          2293.4411063508637,
+          2409.432687062796,
+          2358.130219825142,
+          2395.6588256836835,
+          2201.780626670531,
+          2384.8456187121024,
+          2278.361147213089,
+          2353.8946201018007,
+          2283.353514772376
         ]
       },
       "isolation": {
@@ -681,12 +726,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 67.2611250000009
+          "ms": 74.3302079999994
         },
         {
           "tenantId": "t001",
@@ -698,12 +743,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 61.79491699999926
+          "ms": 69.7628749999858
         },
         {
           "tenantId": "t002",
@@ -715,12 +760,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 65.95266700000138
+          "ms": 65.142875000005
         },
         {
           "tenantId": "t003",
@@ -732,12 +777,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.215290999996796
+          "ms": 79.82154100001208
         },
         {
           "tenantId": "t004",
@@ -749,12 +794,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 67.89091700000063
+          "ms": 66.68937500000175
         },
         {
           "tenantId": "t005",
@@ -766,12 +811,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 59.493875000000116
+          "ms": 72.79591699999582
         },
         {
           "tenantId": "t006",
@@ -783,12 +828,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.19562500000029
+          "ms": 67.95350000000326
         },
         {
           "tenantId": "t007",
@@ -800,12 +845,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.48137499999939
+          "ms": 67.25750000000698
         },
         {
           "tenantId": "t008",
@@ -817,12 +862,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.3483750000014
+          "ms": 78.11208299999998
         },
         {
           "tenantId": "t009",
@@ -834,12 +879,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.1137920000001
+          "ms": 61.87341600000218
         },
         {
           "tenantId": "t010",
@@ -851,12 +896,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 72.43691699999908
+          "ms": 66.12216700000863
         },
         {
           "tenantId": "t011",
@@ -868,12 +913,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.41558300000179
+          "ms": 67.87445800000569
         },
         {
           "tenantId": "t012",
@@ -885,12 +930,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.22016599999915
+          "ms": 61.12145900000178
         },
         {
           "tenantId": "t013",
@@ -902,12 +947,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.76620899999398
+          "ms": 65.2020840000041
         },
         {
           "tenantId": "t014",
@@ -919,12 +964,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 49.52654099999927
+          "ms": 59.21837499999674
         },
         {
           "tenantId": "t015",
@@ -936,12 +981,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.041041999997105
+          "ms": 63.40441699999792
         },
         {
           "tenantId": "t016",
@@ -953,12 +998,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.0045420000024
+          "ms": 61.432291000004625
         },
         {
           "tenantId": "t017",
@@ -970,12 +1015,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 59.21045800000138
+          "ms": 64.62025000000722
         },
         {
           "tenantId": "t018",
@@ -987,12 +1032,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.34304199999315
+          "ms": 61.54333299999416
         },
         {
           "tenantId": "t019",
@@ -1004,12 +1049,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.468291999997746
+          "ms": 59.25287500000559
         },
         {
           "tenantId": "t020",
@@ -1021,12 +1066,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.341082999999344
+          "ms": 62.224125000007916
         },
         {
           "tenantId": "t021",
@@ -1038,12 +1083,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.680499999994936
+          "ms": 61.416582999998354
         },
         {
           "tenantId": "t022",
@@ -1055,12 +1100,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 51.866165999999794
+          "ms": 59.29058400000213
         },
         {
           "tenantId": "t023",
@@ -1072,12 +1117,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.60479100000521
+          "ms": 78.7847080000065
         },
         {
           "tenantId": "t024",
@@ -1089,12 +1134,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.30987499999901
+          "ms": 61.67775000000256
         },
         {
           "tenantId": "t025",
@@ -1106,12 +1151,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.17291600000317
+          "ms": 60.08304100000532
         },
         {
           "tenantId": "t026",
@@ -1123,12 +1168,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.20637500000157
+          "ms": 61.8200419999921
         },
         {
           "tenantId": "t027",
@@ -1140,12 +1185,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.74945899999875
+          "ms": 65.71683399999165
         },
         {
           "tenantId": "t028",
@@ -1157,12 +1202,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 60.113416999993206
+          "ms": 62.436541999995825
         },
         {
           "tenantId": "t029",
@@ -1174,12 +1219,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.62633300000016
+          "ms": 65.46525000000838
         },
         {
           "tenantId": "t030",
@@ -1191,12 +1236,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.437125000004016
+          "ms": 69.02799999999115
         },
         {
           "tenantId": "t031",
@@ -1208,12 +1253,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.82270900000003
+          "ms": 61.95533300000534
         },
         {
           "tenantId": "t032",
@@ -1225,12 +1270,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.19562500000029
+          "ms": 65.93299999998999
         },
         {
           "tenantId": "t033",
@@ -1242,12 +1287,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.18087500000547
+          "ms": 59.91770800000813
         },
         {
           "tenantId": "t034",
@@ -1259,12 +1304,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 63.3023749999993
+          "ms": 59.85358300000371
         },
         {
           "tenantId": "t035",
@@ -1276,12 +1321,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.94704199999978
+          "ms": 62.12066699999559
         },
         {
           "tenantId": "t036",
@@ -1293,12 +1338,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.38533300000563
+          "ms": 61.97912499999802
         },
         {
           "tenantId": "t037",
@@ -1310,12 +1355,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.84341699999641
+          "ms": 62.12241599999834
         },
         {
           "tenantId": "t038",
@@ -1327,12 +1372,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 59.714208000004874
+          "ms": 96.39641699999629
         },
         {
           "tenantId": "t039",
@@ -1344,12 +1389,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 51.9607909999977
+          "ms": 61.7058340000076
         },
         {
           "tenantId": "t040",
@@ -1361,12 +1406,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 51.47600000000239
+          "ms": 70.11041700000351
         },
         {
           "tenantId": "t041",
@@ -1378,12 +1423,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 50.60954099999799
+          "ms": 140.91104199999245
         },
         {
           "tenantId": "t042",
@@ -1395,12 +1440,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 50.932166999999026
+          "ms": 70.84983300000022
         },
         {
           "tenantId": "t043",
@@ -1412,12 +1457,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 48.396374999996624
+          "ms": 65.96050000000105
         },
         {
           "tenantId": "t044",
@@ -1429,12 +1474,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 49.84895799999504
+          "ms": 72.72033399999782
         },
         {
           "tenantId": "t045",
@@ -1446,12 +1491,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.47316700000374
+          "ms": 68.30625000000873
         },
         {
           "tenantId": "t046",
@@ -1463,12 +1508,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 67.23683399999572
+          "ms": 70.93454099999508
         },
         {
           "tenantId": "t047",
@@ -1480,12 +1525,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.625417000002926
+          "ms": 76.65191699999559
         },
         {
           "tenantId": "t048",
@@ -1497,12 +1542,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.53570899999613
+          "ms": 63.32312499999534
         },
         {
           "tenantId": "t049",
@@ -1514,28 +1559,43 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.74579200000153
+          "ms": 71.16604200001166
         }
       ],
-      "emptyBytes": 419059102,
-      "loadedBytes": 498611962,
-      "decisionsStored": 10050,
+      "emptyBytes": 419236750,
+      "loadedBytes": 730661478,
+      "decisionsStored": 40050,
       "throughput": {
-        "runs": 5,
+        "runs": 20,
         "decisionsPerRun": 2000,
         "concurrency": 16,
         "connectionCeiling": 50,
         "decisionsPerSecond": [
-          2351.943446089853,
-          2290.491924655994,
-          2322.7867344892375,
-          2395.5624600989117,
-          2249.9284233083113
+          2265.4945321168334,
+          2318.9120532846837,
+          2320.7164370043483,
+          2330.0640592861614,
+          2303.4442249773992,
+          2203.9677564277927,
+          2334.796375111921,
+          2398.2037453947296,
+          2305.164826563678,
+          2337.457582449396,
+          2413.0858042841824,
+          2296.3124236386516,
+          2351.2373371203294,
+          2282.381031245369,
+          2314.667694107552,
+          2353.8164722023675,
+          2310.0439991193266,
+          2310.3335298560382,
+          2212.6215956569795,
+          2270.9300999357683
         ]
       },
       "isolation": {
@@ -1618,7 +1678,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.333167000004323
+          "ms": 6.044209000014234
         },
         {
           "tenantId": "t001",
@@ -1629,7 +1689,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.183375000000524
+          "ms": 5.112250000005588
         },
         {
           "tenantId": "t002",
@@ -1640,7 +1700,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.980999999999767
+          "ms": 4.914999999979045
         },
         {
           "tenantId": "t003",
@@ -1651,7 +1711,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4734580000003916
+          "ms": 4.751041000010446
         },
         {
           "tenantId": "t004",
@@ -1662,7 +1722,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.513082999998005
+          "ms": 4.798249999992549
         },
         {
           "tenantId": "t005",
@@ -1673,7 +1733,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4279590000005555
+          "ms": 5.611207999987528
         },
         {
           "tenantId": "t006",
@@ -1684,7 +1744,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.6612909999967087
+          "ms": 4.40495899997768
         },
         {
           "tenantId": "t007",
@@ -1695,7 +1755,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4504589999996824
+          "ms": 3.9516249999869615
         },
         {
           "tenantId": "t008",
@@ -1706,7 +1766,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.437000000005355
+          "ms": 4.41425000000163
         },
         {
           "tenantId": "t009",
@@ -1717,7 +1777,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.134040999997524
+          "ms": 5.099458000011509
         },
         {
           "tenantId": "t010",
@@ -1728,7 +1788,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.513708000005863
+          "ms": 5.33470799998031
         },
         {
           "tenantId": "t011",
@@ -1739,7 +1799,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.433166999995592
+          "ms": 3.961290999985067
         },
         {
           "tenantId": "t012",
@@ -1750,7 +1810,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4534999999959837
+          "ms": 5.308250000001863
         },
         {
           "tenantId": "t013",
@@ -1761,7 +1821,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.8064999999987776
+          "ms": 4.5897919999843
         },
         {
           "tenantId": "t014",
@@ -1772,7 +1832,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.414166999995359
+          "ms": 4.222166999999899
         },
         {
           "tenantId": "t015",
@@ -1783,7 +1843,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4627089999994496
+          "ms": 6.733957999997074
         },
         {
           "tenantId": "t016",
@@ -1794,7 +1854,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.505541999998968
+          "ms": 5.333207999996375
         },
         {
           "tenantId": "t017",
@@ -1805,7 +1865,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.356791999998677
+          "ms": 4.687666999991052
         },
         {
           "tenantId": "t018",
@@ -1816,7 +1876,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2930000000051223
+          "ms": 5.696457999991253
         },
         {
           "tenantId": "t019",
@@ -1827,7 +1887,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3807080000042333
+          "ms": 4.564125000004424
         },
         {
           "tenantId": "t020",
@@ -1838,7 +1898,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4766660000022966
+          "ms": 5.29091700000572
         },
         {
           "tenantId": "t021",
@@ -1849,7 +1909,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.358124999998836
+          "ms": 4.40433399999165
         },
         {
           "tenantId": "t022",
@@ -1860,7 +1920,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3685830000031274
+          "ms": 5.625916999997571
         },
         {
           "tenantId": "t023",
@@ -1871,7 +1931,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3607499999998254
+          "ms": 5.073666999989655
         },
         {
           "tenantId": "t024",
@@ -1882,7 +1942,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2806669999990845
+          "ms": 4.569292000000132
         },
         {
           "tenantId": "t025",
@@ -1893,7 +1953,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4400839999943855
+          "ms": 4.559416000003694
         },
         {
           "tenantId": "t026",
@@ -1904,7 +1964,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3376250000001164
+          "ms": 4.051667000021553
         },
         {
           "tenantId": "t027",
@@ -1915,7 +1975,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.299749999998312
+          "ms": 5.1948750000156
         },
         {
           "tenantId": "t028",
@@ -1926,7 +1986,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.376917000001413
+          "ms": 4.436499999981606
         },
         {
           "tenantId": "t029",
@@ -1937,7 +1997,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.291165999995428
+          "ms": 4.776875000010477
         },
         {
           "tenantId": "t030",
@@ -1948,7 +2008,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4270829999950365
+          "ms": 4.741833999985829
         },
         {
           "tenantId": "t031",
@@ -1959,7 +2019,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4759999999951106
+          "ms": 4.200666999997338
         },
         {
           "tenantId": "t032",
@@ -1970,7 +2030,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.606707999999344
+          "ms": 4.8087090000044554
         },
         {
           "tenantId": "t033",
@@ -1981,7 +2041,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.392249999997148
+          "ms": 4.035999999992782
         },
         {
           "tenantId": "t034",
@@ -1992,7 +2052,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3540829999983544
+          "ms": 5.452665999997407
         },
         {
           "tenantId": "t035",
@@ -2003,7 +2063,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4261249999981374
+          "ms": 4.694374999991851
         },
         {
           "tenantId": "t036",
@@ -2014,7 +2074,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 8.09558300000208
+          "ms": 4.563750000001164
         },
         {
           "tenantId": "t037",
@@ -2025,7 +2085,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.637957999999344
+          "ms": 4.419874999992317
         },
         {
           "tenantId": "t038",
@@ -2036,7 +2096,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3688750000001164
+          "ms": 4.286457999987761
         },
         {
           "tenantId": "t039",
@@ -2047,7 +2107,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.376040999995894
+          "ms": 4.653666999976849
         },
         {
           "tenantId": "t040",
@@ -2058,7 +2118,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3835000000035507
+          "ms": 4.885375000012573
         },
         {
           "tenantId": "t041",
@@ -2069,7 +2129,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4411660000041593
+          "ms": 4.818249999982072
         },
         {
           "tenantId": "t042",
@@ -2080,7 +2140,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3418749999982538
+          "ms": 4.989792000007583
         },
         {
           "tenantId": "t043",
@@ -2091,7 +2151,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3142079999961425
+          "ms": 4.130000000004657
         },
         {
           "tenantId": "t044",
@@ -2102,7 +2162,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.331500000000233
+          "ms": 4.048083000001498
         },
         {
           "tenantId": "t045",
@@ -2113,7 +2173,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3527910000047996
+          "ms": 5.029125000000931
         },
         {
           "tenantId": "t046",
@@ -2124,7 +2184,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4321250000066357
+          "ms": 4.412834000017028
         },
         {
           "tenantId": "t047",
@@ -2135,7 +2195,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.5696250000037253
+          "ms": 4.641250000015134
         },
         {
           "tenantId": "t048",
@@ -2146,7 +2206,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4409579999992275
+          "ms": 4.992708000005223
         },
         {
           "tenantId": "t049",
@@ -2157,23 +2217,38 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.468332999997074
+          "ms": 5.103292000014335
         }
       ],
-      "emptyBytes": 8400019,
-      "loadedBytes": 85314707,
-      "decisionsStored": 10050,
+      "emptyBytes": 8416403,
+      "loadedBytes": 316853395,
+      "decisionsStored": 40050,
       "throughput": {
-        "runs": 5,
+        "runs": 20,
         "decisionsPerRun": 2000,
         "concurrency": 16,
         "connectionCeiling": 16,
         "decisionsPerSecond": [
-          2282.5051929732126,
-          2398.4236351064333,
-          2275.895422605346,
-          2354.8417858983817,
-          2166.354057262937
+          2270.0881894415547,
+          2255.5368142375037,
+          2332.324117251729,
+          2207.197441750421,
+          2415.845775961806,
+          2356.3633312531206,
+          2316.374370160267,
+          2211.645741561963,
+          2446.009187232525,
+          2408.4982666724914,
+          2452.94197017054,
+          2420.0661000397627,
+          2318.0461738641075,
+          2212.824682800668,
+          2358.966718462598,
+          2416.5677477886443,
+          2343.41748370544,
+          2345.88764429775,
+          2352.0472822845836,
+          2266.694344666795
         ]
       },
       "isolation": {
@@ -2257,12 +2332,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 60.56158299998788
+          "ms": 67.18975000001956
         },
         {
           "tenantId": "t001",
@@ -2274,12 +2349,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.94308300000557
+          "ms": 60.04450000001816
         },
         {
           "tenantId": "t002",
@@ -2291,12 +2366,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.72112499999639
+          "ms": 76.59820900001796
         },
         {
           "tenantId": "t003",
@@ -2308,12 +2383,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 50.754291999997804
+          "ms": 58.19075000000885
         },
         {
           "tenantId": "t004",
@@ -2325,12 +2400,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 49.60412499999802
+          "ms": 69.50470799999312
         },
         {
           "tenantId": "t005",
@@ -2342,12 +2417,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.08062500000233
+          "ms": 58.92941699997755
         },
         {
           "tenantId": "t006",
@@ -2359,12 +2434,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.56270899999072
+          "ms": 67.58358299999963
         },
         {
           "tenantId": "t007",
@@ -2376,12 +2451,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.03641700001026
+          "ms": 68.91104099998483
         },
         {
           "tenantId": "t008",
@@ -2393,12 +2468,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 60.55054100000416
+          "ms": 61.962541999993846
         },
         {
           "tenantId": "t009",
@@ -2410,12 +2485,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.7310839999991
+          "ms": 64.53804199997103
         },
         {
           "tenantId": "t010",
@@ -2426,7 +2501,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.1863329999905545
+          "ms": 4.428957999974955
         },
         {
           "tenantId": "t011",
@@ -2437,7 +2512,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.206999999994878
+          "ms": 4.058499999984633
         },
         {
           "tenantId": "t012",
@@ -2448,7 +2523,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.056500000006054
+          "ms": 5.231040999991819
         },
         {
           "tenantId": "t013",
@@ -2459,7 +2534,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.8213749999995343
+          "ms": 4.423417000041809
         },
         {
           "tenantId": "t014",
@@ -2470,7 +2545,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.087167000005138
+          "ms": 5.303750000020955
         },
         {
           "tenantId": "t015",
@@ -2481,7 +2556,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.9757919999974547
+          "ms": 4.489082999993116
         },
         {
           "tenantId": "t016",
@@ -2492,7 +2567,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.41591700000572
+          "ms": 4.563416999997571
         },
         {
           "tenantId": "t017",
@@ -2503,7 +2578,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.5066660000011325
+          "ms": 4.57345800002804
         },
         {
           "tenantId": "t018",
@@ -2514,7 +2589,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.430291999990004
+          "ms": 3.8248749999911524
         },
         {
           "tenantId": "t019",
@@ -2525,7 +2600,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4197080000012647
+          "ms": 4.521000000007916
         },
         {
           "tenantId": "t020",
@@ -2536,7 +2611,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4671670000097947
+          "ms": 3.8697919999831356
         },
         {
           "tenantId": "t021",
@@ -2547,7 +2622,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.24550000000454
+          "ms": 4.391082999994978
         },
         {
           "tenantId": "t022",
@@ -2558,7 +2633,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3851250000006985
+          "ms": 4.011832999996841
         },
         {
           "tenantId": "t023",
@@ -2569,7 +2644,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4065410000039265
+          "ms": 4.656125000037719
         },
         {
           "tenantId": "t024",
@@ -2580,7 +2655,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4042500000068685
+          "ms": 4.070292000018526
         },
         {
           "tenantId": "t025",
@@ -2591,7 +2666,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.302625000011176
+          "ms": 4.629499999980908
         },
         {
           "tenantId": "t026",
@@ -2602,7 +2677,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.401499999992666
+          "ms": 3.912750000017695
         },
         {
           "tenantId": "t027",
@@ -2613,7 +2688,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3092909999977564
+          "ms": 4.578833999985363
         },
         {
           "tenantId": "t028",
@@ -2624,7 +2699,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4332919999869773
+          "ms": 4.293957999965642
         },
         {
           "tenantId": "t029",
@@ -2635,7 +2710,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.346625000005588
+          "ms": 5.331874999974389
         },
         {
           "tenantId": "t030",
@@ -2646,7 +2721,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3582080000051064
+          "ms": 4.765583000029437
         },
         {
           "tenantId": "t031",
@@ -2657,7 +2732,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.269916999997804
+          "ms": 4.190459000004921
         },
         {
           "tenantId": "t032",
@@ -2668,7 +2743,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2753329999977723
+          "ms": 4.675875000015367
         },
         {
           "tenantId": "t033",
@@ -2679,7 +2754,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.374792000002344
+          "ms": 5.141416000027675
         },
         {
           "tenantId": "t034",
@@ -2690,7 +2765,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3510000000096625
+          "ms": 4.9372089999960735
         },
         {
           "tenantId": "t035",
@@ -2701,7 +2776,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3704999999899883
+          "ms": 4.490749999997206
         },
         {
           "tenantId": "t036",
@@ -2712,7 +2787,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2904169999965234
+          "ms": 5.06191700004274
         },
         {
           "tenantId": "t037",
@@ -2723,7 +2798,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.812082999997074
+          "ms": 4.34583400003612
         },
         {
           "tenantId": "t038",
@@ -2734,7 +2809,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.5348749999975553
+          "ms": 3.970499999995809
         },
         {
           "tenantId": "t039",
@@ -2745,7 +2820,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.477666999999201
+          "ms": 4.32445800001733
         },
         {
           "tenantId": "t040",
@@ -2756,7 +2831,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3735410000081174
+          "ms": 3.9495410000090487
         },
         {
           "tenantId": "t041",
@@ -2767,7 +2842,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2753329999977723
+          "ms": 5.503333000000566
         },
         {
           "tenantId": "t042",
@@ -2778,7 +2853,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.291333000001032
+          "ms": 4.985041000007186
         },
         {
           "tenantId": "t043",
@@ -2789,7 +2864,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.419833000007202
+          "ms": 4.526708999997936
         },
         {
           "tenantId": "t044",
@@ -2800,7 +2875,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4055420000076992
+          "ms": 4.588166999979876
         },
         {
           "tenantId": "t045",
@@ -2811,7 +2886,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.361457999999402
+          "ms": 4.936291999998502
         },
         {
           "tenantId": "t046",
@@ -2822,7 +2897,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4472079999977723
+          "ms": 3.9178339999634773
         },
         {
           "tenantId": "t047",
@@ -2833,7 +2908,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3572910000075353
+          "ms": 5.494209000025876
         },
         {
           "tenantId": "t048",
@@ -2844,7 +2919,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3748329999943962
+          "ms": 4.513083000027109
         },
         {
           "tenantId": "t049",
@@ -2855,23 +2930,38 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3617920000106096
+          "ms": 4.650708000001032
         }
       ],
-      "emptyBytes": 92250061,
-      "loadedBytes": 169424317,
-      "decisionsStored": 10050,
+      "emptyBytes": 92105413,
+      "loadedBytes": 401211457,
+      "decisionsStored": 40050,
       "throughput": {
-        "runs": 5,
+        "runs": 20,
         "decisionsPerRun": 2000,
         "concurrency": 16,
         "connectionCeiling": 26,
         "decisionsPerSecond": [
-          2304.5290083579957,
-          2293.1637920903017,
-          2113.988552183313,
-          2341.8271403714616,
-          2436.957063101216
+          2232.311962248276,
+          2280.2926176836786,
+          2368.043841319575,
+          2448.7103596307097,
+          2350.2805206692833,
+          2375.4497251897674,
+          2374.0630055548045,
+          2393.2083141252983,
+          2313.3103170369736,
+          2429.0331400582,
+          2450.4403553426137,
+          2414.7523246736673,
+          2381.7206503143534,
+          2220.9549428640416,
+          2306.734236679298,
+          2386.9479281246254,
+          2336.6476417477265,
+          2376.9231651160476,
+          2311.576534204117,
+          2343.943763576277
         ]
       },
       "isolation": {
@@ -2955,12 +3045,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.989958999998635
+          "ms": 73.3293330000015
         },
         {
           "tenantId": "t001",
@@ -2972,12 +3062,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 48.288583999994444
+          "ms": 67.40887499996461
         },
         {
           "tenantId": "t002",
@@ -2989,12 +3079,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 51.87249999999767
+          "ms": 75.69250000000466
         },
         {
           "tenantId": "t003",
@@ -3006,12 +3096,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 51.595458000025246
+          "ms": 69.85762500000419
         },
         {
           "tenantId": "t004",
@@ -3023,12 +3113,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.95154199999524
+          "ms": 65.0282920000027
         },
         {
           "tenantId": "t005",
@@ -3040,12 +3130,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 50.199791999999434
+          "ms": 68.2587090000161
         },
         {
           "tenantId": "t006",
@@ -3057,12 +3147,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 50.68679199999315
+          "ms": 67.40716599998996
         },
         {
           "tenantId": "t007",
@@ -3074,12 +3164,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.530999999988126
+          "ms": 66.40516700001899
         },
         {
           "tenantId": "t008",
@@ -3091,12 +3181,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.690042000001995
+          "ms": 63.49787500000093
         },
         {
           "tenantId": "t009",
@@ -3108,12 +3198,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.57670799997868
+          "ms": 65.38858299999265
         },
         {
           "tenantId": "t010",
@@ -3125,12 +3215,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.950958999979775
+          "ms": 71.94033300003503
         },
         {
           "tenantId": "t011",
@@ -3142,12 +3232,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.034084000013536
+          "ms": 66.64154099998996
         },
         {
           "tenantId": "t012",
@@ -3159,12 +3249,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 68.22045799999614
+          "ms": 70.32524999999441
         },
         {
           "tenantId": "t013",
@@ -3176,12 +3266,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 67.7245830000029
+          "ms": 66.60499999998137
         },
         {
           "tenantId": "t014",
@@ -3193,12 +3283,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.71804200002225
+          "ms": 61.667291999969166
         },
         {
           "tenantId": "t015",
@@ -3210,12 +3300,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.33045899998979
+          "ms": 63.92579200002365
         },
         {
           "tenantId": "t016",
@@ -3227,12 +3317,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.80754199999501
+          "ms": 64.42208300001221
         },
         {
           "tenantId": "t017",
@@ -3244,12 +3334,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.41045799999847
+          "ms": 67.46187499997905
         },
         {
           "tenantId": "t018",
@@ -3261,12 +3351,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.00458300000173
+          "ms": 60.509874999988824
         },
         {
           "tenantId": "t019",
@@ -3278,12 +3368,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.542084000015166
+          "ms": 57.51295800000662
         },
         {
           "tenantId": "t020",
@@ -3295,12 +3385,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.42354200000409
+          "ms": 68.53470799996285
         },
         {
           "tenantId": "t021",
@@ -3312,12 +3402,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 61.09029200000805
+          "ms": 63.29120799998054
         },
         {
           "tenantId": "t022",
@@ -3329,12 +3419,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.264125000016065
+          "ms": 59.20637500000885
         },
         {
           "tenantId": "t023",
@@ -3346,12 +3436,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.79033300001174
+          "ms": 61.965084000024945
         },
         {
           "tenantId": "t024",
@@ -3363,12 +3453,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.146750000014435
+          "ms": 62.39033399999607
         },
         {
           "tenantId": "t025",
@@ -3380,12 +3470,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.65566699998453
+          "ms": 64.61083300004248
         },
         {
           "tenantId": "t026",
@@ -3397,12 +3487,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 62.082208000007086
+          "ms": 60.80504100001417
         },
         {
           "tenantId": "t027",
@@ -3414,12 +3504,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 59.16816600001766
+          "ms": 64.83095799997682
         },
         {
           "tenantId": "t028",
@@ -3431,12 +3521,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.377708000014536
+          "ms": 62.98120799998287
         },
         {
           "tenantId": "t029",
@@ -3448,12 +3538,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.078083999978844
+          "ms": 62.4426660000463
         },
         {
           "tenantId": "t030",
@@ -3465,12 +3555,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.07779199999641
+          "ms": 62.4375
         },
         {
           "tenantId": "t031",
@@ -3482,12 +3572,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 51.33445800002664
+          "ms": 63.28549999999814
         },
         {
           "tenantId": "t032",
@@ -3499,12 +3589,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 53.16429099999368
+          "ms": 59.50666600000113
         },
         {
           "tenantId": "t033",
@@ -3516,12 +3606,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.3269169999985
+          "ms": 65.28504200000316
         },
         {
           "tenantId": "t034",
@@ -3533,12 +3623,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.63649999999325
+          "ms": 59.12745900003938
         },
         {
           "tenantId": "t035",
@@ -3550,12 +3640,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.71837499999674
+          "ms": 61.104584000015166
         },
         {
           "tenantId": "t036",
@@ -3567,12 +3657,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 60.9871249999851
+          "ms": 60.086249999993015
         },
         {
           "tenantId": "t037",
@@ -3584,12 +3674,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.39341700001387
+          "ms": 63.55483300000196
         },
         {
           "tenantId": "t038",
@@ -3601,12 +3691,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.47254200000316
+          "ms": 66.75258299999405
         },
         {
           "tenantId": "t039",
@@ -3618,12 +3708,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 65.3075410000165
+          "ms": 62.78629100002581
         },
         {
           "tenantId": "t040",
@@ -3635,12 +3725,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.24599999998463
+          "ms": 59.12741700001061
         },
         {
           "tenantId": "t041",
@@ -3652,12 +3742,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 61.88208300000406
+          "ms": 59.02641599997878
         },
         {
           "tenantId": "t042",
@@ -3669,12 +3759,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 60.74637499998789
+          "ms": 71.84191600000486
         },
         {
           "tenantId": "t043",
@@ -3686,12 +3776,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.43154200000572
+          "ms": 65.50037500000326
         },
         {
           "tenantId": "t044",
@@ -3703,12 +3793,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 63.415709000022616
+          "ms": 70.25941699999385
         },
         {
           "tenantId": "t045",
@@ -3720,12 +3810,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 62.717625000019325
+          "ms": 64.90374999999767
         },
         {
           "tenantId": "t046",
@@ -3737,12 +3827,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.304000000003725
+          "ms": 60.19166700000642
         },
         {
           "tenantId": "t047",
@@ -3754,12 +3844,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 61.74558399998932
+          "ms": 63.61149999999907
         },
         {
           "tenantId": "t048",
@@ -3771,12 +3861,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.16762500000186
+          "ms": 58.12374999996973
         },
         {
           "tenantId": "t049",
@@ -3788,12 +3878,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.712916000018595
+          "ms": 59.43337500002235
         },
         {
           "tenantId": "t050",
@@ -3805,12 +3895,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.48787499999162
+          "ms": 61.86566700000549
         },
         {
           "tenantId": "t051",
@@ -3822,12 +3912,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 63.79349999999977
+          "ms": 64.35800000000745
         },
         {
           "tenantId": "t052",
@@ -3839,12 +3929,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 63.035207999986596
+          "ms": 62.161375000025146
         },
         {
           "tenantId": "t053",
@@ -3856,12 +3946,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.60166700000991
+          "ms": 63.10458300000755
         },
         {
           "tenantId": "t054",
@@ -3873,12 +3963,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 65.18954099999974
+          "ms": 58.42637499998091
         },
         {
           "tenantId": "t055",
@@ -3890,12 +3980,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 65.95837499998743
+          "ms": 62.06287500000326
         },
         {
           "tenantId": "t056",
@@ -3907,12 +3997,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.70891700001084
+          "ms": 61.46899999998277
         },
         {
           "tenantId": "t057",
@@ -3924,12 +4014,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 63.2568339999998
+          "ms": 59.64958299999125
         },
         {
           "tenantId": "t058",
@@ -3941,12 +4031,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 65.27141600000323
+          "ms": 60.14175000000978
         },
         {
           "tenantId": "t059",
@@ -3958,12 +4048,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 65.02262500001234
+          "ms": 58.55229200003669
         },
         {
           "tenantId": "t060",
@@ -3975,12 +4065,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 58.66099999999278
+          "ms": 62.4158339999849
         },
         {
           "tenantId": "t061",
@@ -3992,12 +4082,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 67.15674999999464
+          "ms": 60.246791999961715
         },
         {
           "tenantId": "t062",
@@ -4009,12 +4099,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 66.93008299998473
+          "ms": 62.47041700000409
         },
         {
           "tenantId": "t063",
@@ -4026,12 +4116,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 62.9668749999837
+          "ms": 58.7975420000148
         },
         {
           "tenantId": "t064",
@@ -4043,12 +4133,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 77.42291600001045
+          "ms": 61.91195899999002
         },
         {
           "tenantId": "t065",
@@ -4060,12 +4150,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 59.41470799999661
+          "ms": 58.59079200000269
         },
         {
           "tenantId": "t066",
@@ -4077,12 +4167,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 63.04216699997778
+          "ms": 60.37254200002644
         },
         {
           "tenantId": "t067",
@@ -4094,12 +4184,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 57.54591700001038
+          "ms": 61.62204200000269
         },
         {
           "tenantId": "t068",
@@ -4111,12 +4201,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 62.58958299999358
+          "ms": 62.61733400000958
         },
         {
           "tenantId": "t069",
@@ -4128,12 +4218,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.68758299999172
+          "ms": 62.609833000053186
         },
         {
           "tenantId": "t070",
@@ -4145,12 +4235,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 62.8404589999991
+          "ms": 60.225749999983236
         },
         {
           "tenantId": "t071",
@@ -4162,12 +4252,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 65.38091700000223
+          "ms": 57.788999999989755
         },
         {
           "tenantId": "t072",
@@ -4179,12 +4269,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 61.65320899998187
+          "ms": 58.72504099999787
         },
         {
           "tenantId": "t073",
@@ -4196,12 +4286,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 60.15837499999907
+          "ms": 59.61887500004377
         },
         {
           "tenantId": "t074",
@@ -4213,12 +4303,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 61.56583400000818
+          "ms": 59.791999999957625
         },
         {
           "tenantId": "t075",
@@ -4230,12 +4320,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 60.40929100001813
+          "ms": 63.04125000000931
         },
         {
           "tenantId": "t076",
@@ -4247,12 +4337,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.39879100001417
+          "ms": 58.28508399997372
         },
         {
           "tenantId": "t077",
@@ -4264,12 +4354,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.28345799999079
+          "ms": 57.54133399995044
         },
         {
           "tenantId": "t078",
@@ -4281,12 +4371,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 59.492666000005556
+          "ms": 56.4754580000299
         },
         {
           "tenantId": "t079",
@@ -4298,12 +4388,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 62.34145899998839
+          "ms": 59.067665999988094
         },
         {
           "tenantId": "t080",
@@ -4315,12 +4405,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.07800000000861
+          "ms": 58.10416599997552
         },
         {
           "tenantId": "t081",
@@ -4332,12 +4422,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 202.10945800002082
+          "ms": 60.619417000038084
         },
         {
           "tenantId": "t082",
@@ -4349,12 +4439,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 61.02512500001467
+          "ms": 63.38195899996208
         },
         {
           "tenantId": "t083",
@@ -4366,12 +4456,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 62.86237499999697
+          "ms": 61.57587500003865
         },
         {
           "tenantId": "t084",
@@ -4383,12 +4473,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 79.73050000000512
+          "ms": 63.0669170000474
         },
         {
           "tenantId": "t085",
@@ -4400,12 +4490,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 74.33358299999963
+          "ms": 60.03641699999571
         },
         {
           "tenantId": "t086",
@@ -4417,12 +4507,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 72.94437499999185
+          "ms": 58.19391700002598
         },
         {
           "tenantId": "t087",
@@ -4434,12 +4524,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 83.27191599999787
+          "ms": 61.31525000004331
         },
         {
           "tenantId": "t088",
@@ -4451,12 +4541,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 56.691290999995545
+          "ms": 62.838999999978114
         },
         {
           "tenantId": "t089",
@@ -4468,12 +4558,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 65.52599999998347
+          "ms": 63.67479199997615
         },
         {
           "tenantId": "t090",
@@ -4485,12 +4575,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.765625
+          "ms": 57.66062500001863
         },
         {
           "tenantId": "t091",
@@ -4502,12 +4592,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.18791700000293
+          "ms": 58.42679200001294
         },
         {
           "tenantId": "t092",
@@ -4519,12 +4609,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 55.51662499998929
+          "ms": 59.265958999982104
         },
         {
           "tenantId": "t093",
@@ -4536,12 +4626,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 69.89374999998836
+          "ms": 60.153166999982204
         },
         {
           "tenantId": "t094",
@@ -4553,12 +4643,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.312375000008615
+          "ms": 61.25054199999431
         },
         {
           "tenantId": "t095",
@@ -4570,12 +4660,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.50629099999787
+          "ms": 61.10070900002029
         },
         {
           "tenantId": "t096",
@@ -4587,12 +4677,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 80.43770899999072
+          "ms": 56.568457999965176
         },
         {
           "tenantId": "t097",
@@ -4604,12 +4694,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 51.461375000013504
+          "ms": 61.74633300001733
         },
         {
           "tenantId": "t098",
@@ -4621,12 +4711,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 69.6272909999825
+          "ms": 61.46812500001397
         },
         {
           "tenantId": "t099",
@@ -4638,28 +4728,43 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.9701659999846
+          "ms": 56.70091700000921
         }
       ],
-      "emptyBytes": 837484844,
-      "loadedBytes": 921049092,
-      "decisionsStored": 10100,
+      "emptyBytes": 838806564,
+      "loadedBytes": 1153503172,
+      "decisionsStored": 40100,
       "throughput": {
-        "runs": 5,
+        "runs": 20,
         "decisionsPerRun": 2000,
         "concurrency": 16,
         "connectionCeiling": 100,
         "decisionsPerSecond": [
-          2185.769257014911,
-          2269.1539998235326,
-          2298.7969572553343,
-          2336.5642662508867,
-          1701.5777241355506
+          2351.5345189530426,
+          2274.1945158367475,
+          2385.683631809709,
+          2402.0871735451524,
+          2268.322409706917,
+          2125.576491416386,
+          2180.0529350861802,
+          2271.5149393914758,
+          2243.072410211906,
+          1817.7436329016753,
+          1893.0965984485497,
+          2150.0575311856455,
+          2321.6616799424055,
+          2306.475863450943,
+          2209.6460633901797,
+          2207.111683314063,
+          2100.152511920428,
+          2205.0427950572002,
+          1646.9973446063393,
+          2205.5000400501503
         ]
       },
       "isolation": {
@@ -4742,7 +4847,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.254584000009345
+          "ms": 5.626250000030268
         },
         {
           "tenantId": "t001",
@@ -4753,7 +4858,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.95045800000662
+          "ms": 4.843666000000667
         },
         {
           "tenantId": "t002",
@@ -4764,7 +4869,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9090830000059213
+          "ms": 4.92249999998603
         },
         {
           "tenantId": "t003",
@@ -4775,7 +4880,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.889041999995243
+          "ms": 5.870708999980707
         },
         {
           "tenantId": "t004",
@@ -4786,7 +4891,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.873833999998169
+          "ms": 5.118042000045534
         },
         {
           "tenantId": "t005",
@@ -4797,7 +4902,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9185409999918193
+          "ms": 10.668999999994412
         },
         {
           "tenantId": "t006",
@@ -4808,7 +4913,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7997919999761507
+          "ms": 5.20474999997532
         },
         {
           "tenantId": "t007",
@@ -4819,7 +4924,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8258329999807756
+          "ms": 6.157583000021987
         },
         {
           "tenantId": "t008",
@@ -4830,7 +4935,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.80183300000499
+          "ms": 6.554540999990422
         },
         {
           "tenantId": "t009",
@@ -4841,7 +4946,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.749415999976918
+          "ms": 5.989082999993116
         },
         {
           "tenantId": "t010",
@@ -4852,7 +4957,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8701249999867287
+          "ms": 4.7679580000112765
         },
         {
           "tenantId": "t011",
@@ -4863,7 +4968,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.738957999972627
+          "ms": 5.763833999983035
         },
         {
           "tenantId": "t012",
@@ -4874,7 +4979,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 11.878874999994878
+          "ms": 6.009625000006054
         },
         {
           "tenantId": "t013",
@@ -4885,7 +4990,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 5.7299999999813735
+          "ms": 5.267166999983601
         },
         {
           "tenantId": "t014",
@@ -4896,7 +5001,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7518330000166316
+          "ms": 4.545125000004191
         },
         {
           "tenantId": "t015",
@@ -4907,7 +5012,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.6260829999810085
+          "ms": 4.1142499999841675
         },
         {
           "tenantId": "t016",
@@ -4918,7 +5023,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.722875000006752
+          "ms": 4.0991659999708645
         },
         {
           "tenantId": "t017",
@@ -4929,7 +5034,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.691125000012107
+          "ms": 5.159749999991618
         },
         {
           "tenantId": "t018",
@@ -4940,7 +5045,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8237499999813735
+          "ms": 5.11183400003938
         },
         {
           "tenantId": "t019",
@@ -4951,7 +5056,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7988750000076834
+          "ms": 5.8414169999887235
         },
         {
           "tenantId": "t020",
@@ -4962,7 +5067,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.75800000000163
+          "ms": 4.951541999995243
         },
         {
           "tenantId": "t021",
@@ -4973,7 +5078,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7834169999987353
+          "ms": 4.764499999990221
         },
         {
           "tenantId": "t022",
@@ -4984,7 +5089,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.711583000025712
+          "ms": 4.5978330000070855
         },
         {
           "tenantId": "t023",
@@ -4995,7 +5100,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.783666999981506
+          "ms": 4.3862499999813735
         },
         {
           "tenantId": "t024",
@@ -5006,7 +5111,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7719169999763835
+          "ms": 4.066291999944951
         },
         {
           "tenantId": "t025",
@@ -5017,7 +5122,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.72941699999501
+          "ms": 5.33345899998676
         },
         {
           "tenantId": "t026",
@@ -5028,7 +5133,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7165420000092126
+          "ms": 4.884374999965075
         },
         {
           "tenantId": "t027",
@@ -5039,7 +5144,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7706250000046566
+          "ms": 4.482416999991983
         },
         {
           "tenantId": "t028",
@@ -5050,7 +5155,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.630665999982739
+          "ms": 5.1707920000189915
         },
         {
           "tenantId": "t029",
@@ -5061,7 +5166,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7119999999995343
+          "ms": 4.48175000003539
         },
         {
           "tenantId": "t030",
@@ -5072,7 +5177,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7830420000245795
+          "ms": 5.290666999993846
         },
         {
           "tenantId": "t031",
@@ -5083,7 +5188,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8106250000128057
+          "ms": 5.68179100000998
         },
         {
           "tenantId": "t032",
@@ -5094,7 +5199,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.755457999999635
+          "ms": 4.1932079999824055
         },
         {
           "tenantId": "t033",
@@ -5105,7 +5210,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.76500000001397
+          "ms": 5.001041000010446
         },
         {
           "tenantId": "t034",
@@ -5116,7 +5221,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9779580000031274
+          "ms": 4.509542000014335
         },
         {
           "tenantId": "t035",
@@ -5127,7 +5232,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.818708000006154
+          "ms": 5.137166000029538
         },
         {
           "tenantId": "t036",
@@ -5138,7 +5243,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.828917000006186
+          "ms": 4.17516699997941
         },
         {
           "tenantId": "t037",
@@ -5149,7 +5254,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.774082999996608
+          "ms": 5.562374999979511
         },
         {
           "tenantId": "t038",
@@ -5160,7 +5265,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7087500000197906
+          "ms": 4.411459000024479
         },
         {
           "tenantId": "t039",
@@ -5171,7 +5276,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8162909999955446
+          "ms": 3.8303750000195578
         },
         {
           "tenantId": "t040",
@@ -5182,7 +5287,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.6863329999905545
+          "ms": 4.290124999999534
         },
         {
           "tenantId": "t041",
@@ -5193,7 +5298,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.6937919999763835
+          "ms": 4.458333999966271
         },
         {
           "tenantId": "t042",
@@ -5204,7 +5309,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.770875000016531
+          "ms": 4.492041999998037
         },
         {
           "tenantId": "t043",
@@ -5215,7 +5320,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7579160000022966
+          "ms": 4.064750000019558
         },
         {
           "tenantId": "t044",
@@ -5226,7 +5331,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.7693750000034925
+          "ms": 4.888250000018161
         },
         {
           "tenantId": "t045",
@@ -5237,7 +5342,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.6888749999925494
+          "ms": 4.218667000008281
         },
         {
           "tenantId": "t046",
@@ -5248,7 +5353,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.6543750000128057
+          "ms": 5.030041999998502
         },
         {
           "tenantId": "t047",
@@ -5259,7 +5364,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.697374999988824
+          "ms": 4.632000000041444
         },
         {
           "tenantId": "t048",
@@ -5270,7 +5375,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.723749999975553
+          "ms": 4.891457999998238
         },
         {
           "tenantId": "t049",
@@ -5281,7 +5386,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.097249999991618
+          "ms": 5.243707999994513
         },
         {
           "tenantId": "t050",
@@ -5292,7 +5397,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.361749999981839
+          "ms": 4.281041999987792
         },
         {
           "tenantId": "t051",
@@ -5303,7 +5408,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.576792000007117
+          "ms": 5.145583999983501
         },
         {
           "tenantId": "t052",
@@ -5314,7 +5419,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.781374999991385
+          "ms": 4.6641250000102445
         },
         {
           "tenantId": "t053",
@@ -5325,7 +5430,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.6176249999844
+          "ms": 4.458792000019457
         },
         {
           "tenantId": "t054",
@@ -5336,7 +5441,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 4.228457999997772
+          "ms": 4.330874999985099
         },
         {
           "tenantId": "t055",
@@ -5347,7 +5452,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.843417000025511
+          "ms": 5.933625000005122
         },
         {
           "tenantId": "t056",
@@ -5358,7 +5463,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.0721250000060536
+          "ms": 4.694707999995444
         },
         {
           "tenantId": "t057",
@@ -5369,7 +5474,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3257919999887235
+          "ms": 4.916665999975521
         },
         {
           "tenantId": "t058",
@@ -5380,7 +5485,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.8892090000153985
+          "ms": 6.082249999977648
         },
         {
           "tenantId": "t059",
@@ -5391,7 +5496,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.5512499999895226
+          "ms": 4.892832999990787
         },
         {
           "tenantId": "t060",
@@ -5402,7 +5507,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4189580000238493
+          "ms": 4.640290999959689
         },
         {
           "tenantId": "t061",
@@ -5413,7 +5518,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.1351250000006985
+          "ms": 4.821500000020023
         },
         {
           "tenantId": "t062",
@@ -5424,7 +5529,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.0450419999833684
+          "ms": 4.856917000026442
         },
         {
           "tenantId": "t063",
@@ -5435,7 +5540,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.0662500000034925
+          "ms": 4.239457999996375
         },
         {
           "tenantId": "t064",
@@ -5446,7 +5551,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.145083000010345
+          "ms": 9.617124999989755
         },
         {
           "tenantId": "t065",
@@ -5457,7 +5562,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.09275000001071
+          "ms": 4.732749999966472
         },
         {
           "tenantId": "t066",
@@ -5468,7 +5573,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9886249999981374
+          "ms": 4.517708000028506
         },
         {
           "tenantId": "t067",
@@ -5479,7 +5584,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9371249999967404
+          "ms": 4.835167000012007
         },
         {
           "tenantId": "t068",
@@ -5490,7 +5595,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9736250000132713
+          "ms": 4.277208999963477
         },
         {
           "tenantId": "t069",
@@ -5501,7 +5606,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.008084000000963
+          "ms": 5.529875000007451
         },
         {
           "tenantId": "t070",
@@ -5512,7 +5617,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.887332999991486
+          "ms": 3.7141670000273734
         },
         {
           "tenantId": "t071",
@@ -5523,7 +5628,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8503749999799766
+          "ms": 4.537332999985665
         },
         {
           "tenantId": "t072",
@@ -5534,7 +5639,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8857910000078846
+          "ms": 4.539833999995608
         },
         {
           "tenantId": "t073",
@@ -5545,7 +5650,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9292920000152662
+          "ms": 5.247875000000931
         },
         {
           "tenantId": "t074",
@@ -5556,7 +5661,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8622080000059213
+          "ms": 4.857250000000931
         },
         {
           "tenantId": "t075",
@@ -5567,7 +5672,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8675419999926817
+          "ms": 4.848790999967605
         },
         {
           "tenantId": "t076",
@@ -5578,7 +5683,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.924457999994047
+          "ms": 5.18650000001071
         },
         {
           "tenantId": "t077",
@@ -5589,7 +5694,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8797499999927823
+          "ms": 4.776791999989655
         },
         {
           "tenantId": "t078",
@@ -5600,7 +5705,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.902458000025945
+          "ms": 5.1252499999827705
         },
         {
           "tenantId": "t079",
@@ -5611,7 +5716,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.022624999983236
+          "ms": 5.174332999973558
         },
         {
           "tenantId": "t080",
@@ -5622,7 +5727,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.1957079999847338
+          "ms": 4.176292000047397
         },
         {
           "tenantId": "t081",
@@ -5633,7 +5738,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.0799999999871943
+          "ms": 3.989707999979146
         },
         {
           "tenantId": "t082",
@@ -5644,7 +5749,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9937499999941792
+          "ms": 4.046541999967303
         },
         {
           "tenantId": "t083",
@@ -5655,7 +5760,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.015625
+          "ms": 4.006667000008747
         },
         {
           "tenantId": "t084",
@@ -5666,7 +5771,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8654589999932796
+          "ms": 3.978958000021521
         },
         {
           "tenantId": "t085",
@@ -5677,7 +5782,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9769579999847338
+          "ms": 3.75591699994402
         },
         {
           "tenantId": "t086",
@@ -5688,7 +5793,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.9500000000116415
+          "ms": 3.7183749999967404
         },
         {
           "tenantId": "t087",
@@ -5699,7 +5804,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.944167000008747
+          "ms": 3.8937499999883585
         },
         {
           "tenantId": "t088",
@@ -5710,7 +5815,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.8704579999903217
+          "ms": 3.8393340000184253
         },
         {
           "tenantId": "t089",
@@ -5721,7 +5826,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 2.919415999989724
+          "ms": 3.5443329999689013
         },
         {
           "tenantId": "t090",
@@ -5732,7 +5837,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.0106659999873955
+          "ms": 3.5446249999804422
         },
         {
           "tenantId": "t091",
@@ -5743,7 +5848,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2453329999989364
+          "ms": 3.635958999977447
         },
         {
           "tenantId": "t092",
@@ -5754,7 +5859,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3155409999890253
+          "ms": 3.8064160000067204
         },
         {
           "tenantId": "t093",
@@ -5765,7 +5870,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.296457999997074
+          "ms": 3.7474999999976717
         },
         {
           "tenantId": "t094",
@@ -5776,7 +5881,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.1309170000022277
+          "ms": 3.582583000010345
         },
         {
           "tenantId": "t095",
@@ -5787,7 +5892,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2412919999915175
+          "ms": 3.3168750000186265
         },
         {
           "tenantId": "t096",
@@ -5798,7 +5903,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2100830000126734
+          "ms": 3.452584000013303
         },
         {
           "tenantId": "t097",
@@ -5809,7 +5914,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.479790999990655
+          "ms": 3.50099999998929
         },
         {
           "tenantId": "t098",
@@ -5820,7 +5925,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3628329999919515
+          "ms": 3.337166999990586
         },
         {
           "tenantId": "t099",
@@ -5831,23 +5936,38 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.632500000006985
+          "ms": 3.3295830000424758
         }
       ],
-      "emptyBytes": 8400019,
-      "loadedBytes": 85822611,
-      "decisionsStored": 10100,
+      "emptyBytes": 8416403,
+      "loadedBytes": 317361299,
+      "decisionsStored": 40100,
       "throughput": {
-        "runs": 5,
+        "runs": 20,
         "decisionsPerRun": 2000,
         "concurrency": 16,
         "connectionCeiling": 16,
         "decisionsPerSecond": [
-          1934.7811079153912,
-          2307.5291147957246,
-          2333.837230573892,
-          2272.2040848264774,
-          2274.8394689293127
+          2342.7910343143776,
+          2346.4203143085083,
+          2352.95490388627,
+          2359.811467724004,
+          2385.1775526170513,
+          2278.9299113682446,
+          2382.905512434864,
+          2425.296816888892,
+          2317.2405660708837,
+          2450.5114105204357,
+          2356.4258007271815,
+          2321.0398490628377,
+          2387.413198550294,
+          2436.2181610511366,
+          2112.6301215106537,
+          2195.049942873817,
+          2356.042374067695,
+          2452.549425679873,
+          2316.041190792628,
+          2329.5206988217233
         ]
       },
       "isolation": {
@@ -5931,12 +6051,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 47.24237500000163
+          "ms": 66.45887500001118
         },
         {
           "tenantId": "t001",
@@ -5948,12 +6068,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 46.6433750000142
+          "ms": 60.58754099998623
         },
         {
           "tenantId": "t002",
@@ -5965,12 +6085,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 64.83941700001014
+          "ms": 66.25416700006463
         },
         {
           "tenantId": "t003",
@@ -5982,12 +6102,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.04833399999188
+          "ms": 61.417374999960884
         },
         {
           "tenantId": "t004",
@@ -5999,12 +6119,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.710917000018526
+          "ms": 59.43487500003539
         },
         {
           "tenantId": "t005",
@@ -6016,12 +6136,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.49945800000569
+          "ms": 62.21525000000838
         },
         {
           "tenantId": "t006",
@@ -6033,12 +6153,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 54.834124999993946
+          "ms": 60.74541699991096
         },
         {
           "tenantId": "t007",
@@ -6050,12 +6170,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 52.58695799999987
+          "ms": 60.97716699994635
         },
         {
           "tenantId": "t008",
@@ -6067,12 +6187,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 47.261040999990655
+          "ms": 62.26495900005102
         },
         {
           "tenantId": "t009",
@@ -6084,12 +6204,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 68.31566699998803
+          "ms": 62.65491699997801
         },
         {
           "tenantId": "t010",
@@ -6101,12 +6221,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 48.237708000000566
+          "ms": 58.585749999969266
         },
         {
           "tenantId": "t011",
@@ -6118,12 +6238,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 47.12087499999325
+          "ms": 62.16166699992027
         },
         {
           "tenantId": "t012",
@@ -6135,12 +6255,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 47.22925000000396
+          "ms": 58.961709000053816
         },
         {
           "tenantId": "t013",
@@ -6152,12 +6272,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 67.1191660000186
+          "ms": 58.70083300000988
         },
         {
           "tenantId": "t014",
@@ -6169,12 +6289,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 48.73262500000419
+          "ms": 59.3676249999553
         },
         {
           "tenantId": "t015",
@@ -6186,12 +6306,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 49.83437500000582
+          "ms": 59.15783299994655
         },
         {
           "tenantId": "t016",
@@ -6203,12 +6323,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 62.808832999988226
+          "ms": 60.96058399998583
         },
         {
           "tenantId": "t017",
@@ -6220,12 +6340,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 48.6964169999992
+          "ms": 62.7385409999406
         },
         {
           "tenantId": "t018",
@@ -6237,12 +6357,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 48.581417000008514
+          "ms": 61.582625000039116
         },
         {
           "tenantId": "t019",
@@ -6254,12 +6374,12 @@
             "create tenant login role",
             "grant connect to tenant role",
             "grant application role",
-            "apply 11 migration files",
+            "apply 12 migration files",
             "register tenant in catalog"
           ],
-          "sqlStatements": 81,
+          "sqlStatements": 93,
           "filesChanged": 0,
-          "ms": 50.16620899998816
+          "ms": 66.48354199994355
         },
         {
           "tenantId": "t020",
@@ -6270,7 +6390,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.657999999995809
+          "ms": 4.667541999951936
         },
         {
           "tenantId": "t021",
@@ -6281,7 +6401,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.5327089999918826
+          "ms": 4.600625000079162
         },
         {
           "tenantId": "t022",
@@ -6292,7 +6412,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4481249999953434
+          "ms": 4.145208000089042
         },
         {
           "tenantId": "t023",
@@ -6303,7 +6423,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3382500000006985
+          "ms": 4.8843339999439195
         },
         {
           "tenantId": "t024",
@@ -6314,7 +6434,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.505457999999635
+          "ms": 4.367749999975786
         },
         {
           "tenantId": "t025",
@@ -6325,7 +6445,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.603084000002127
+          "ms": 4.436625000089407
         },
         {
           "tenantId": "t026",
@@ -6336,7 +6456,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.488333999994211
+          "ms": 6.13800000003539
         },
         {
           "tenantId": "t027",
@@ -6347,7 +6467,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.429208000015933
+          "ms": 5.665792000014335
         },
         {
           "tenantId": "t028",
@@ -6358,7 +6478,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.5625
+          "ms": 5.915624999906868
         },
         {
           "tenantId": "t029",
@@ -6369,7 +6489,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.557958999997936
+          "ms": 5.770958000095561
         },
         {
           "tenantId": "t030",
@@ -6380,7 +6500,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.583582999999635
+          "ms": 4.450667000026442
         },
         {
           "tenantId": "t031",
@@ -6391,7 +6511,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.32112499998766
+          "ms": 5.204124999931082
         },
         {
           "tenantId": "t032",
@@ -6402,7 +6522,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.344707999989623
+          "ms": 5.184750000014901
         },
         {
           "tenantId": "t033",
@@ -6413,7 +6533,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2787910000188276
+          "ms": 4.62291599996388
         },
         {
           "tenantId": "t034",
@@ -6424,7 +6544,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.505417000007583
+          "ms": 5.060959000024013
         },
         {
           "tenantId": "t035",
@@ -6435,7 +6555,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.373667000007117
+          "ms": 4.247458000085317
         },
         {
           "tenantId": "t036",
@@ -6446,7 +6566,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.375499999994645
+          "ms": 4.405166000011377
         },
         {
           "tenantId": "t037",
@@ -6457,7 +6577,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.312000000005355
+          "ms": 4.570459000067785
         },
         {
           "tenantId": "t038",
@@ -6468,7 +6588,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2648750000225846
+          "ms": 7.222667000023648
         },
         {
           "tenantId": "t039",
@@ -6479,7 +6599,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.496500000008382
+          "ms": 4.197874999954365
         },
         {
           "tenantId": "t040",
@@ -6490,7 +6610,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3885000000009313
+          "ms": 3.532958999974653
         },
         {
           "tenantId": "t041",
@@ -6501,7 +6621,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.481167000019923
+          "ms": 3.850499999942258
         },
         {
           "tenantId": "t042",
@@ -6512,7 +6632,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.360291999997571
+          "ms": 3.4709169999696314
         },
         {
           "tenantId": "t043",
@@ -6523,7 +6643,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.344707999989623
+          "ms": 3.8917500000679865
         },
         {
           "tenantId": "t044",
@@ -6534,7 +6654,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.378541000012774
+          "ms": 4.369124999968335
         },
         {
           "tenantId": "t045",
@@ -6545,7 +6665,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3516250000102445
+          "ms": 3.907666999963112
         },
         {
           "tenantId": "t046",
@@ -6556,7 +6676,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2341249999881256
+          "ms": 4.473083000048064
         },
         {
           "tenantId": "t047",
@@ -6567,7 +6687,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.378499999991618
+          "ms": 4.212625000043772
         },
         {
           "tenantId": "t048",
@@ -6578,7 +6698,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2968330000003334
+          "ms": 4.421124999993481
         },
         {
           "tenantId": "t049",
@@ -6589,7 +6709,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3779169999761507
+          "ms": 3.981541999964975
         },
         {
           "tenantId": "t050",
@@ -6600,7 +6720,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.413334000011673
+          "ms": 5.369459000066854
         },
         {
           "tenantId": "t051",
@@ -6611,7 +6731,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.269957999989856
+          "ms": 4.278667000005953
         },
         {
           "tenantId": "t052",
@@ -6622,7 +6742,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.526499999978114
+          "ms": 4.004915999947116
         },
         {
           "tenantId": "t053",
@@ -6633,7 +6753,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.412958000000799
+          "ms": 4.533750000060536
         },
         {
           "tenantId": "t054",
@@ -6644,7 +6764,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.413083999999799
+          "ms": 3.528374999994412
         },
         {
           "tenantId": "t055",
@@ -6655,7 +6775,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.443749999976717
+          "ms": 4.008625000016764
         },
         {
           "tenantId": "t056",
@@ -6666,7 +6786,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3898749999934807
+          "ms": 4.955208999919705
         },
         {
           "tenantId": "t057",
@@ -6677,7 +6797,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.38900000002468
+          "ms": 4.259749999968335
         },
         {
           "tenantId": "t058",
@@ -6688,7 +6808,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3936659999890253
+          "ms": 4.738291000016034
         },
         {
           "tenantId": "t059",
@@ -6699,7 +6819,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3817089999793097
+          "ms": 4.289916999987327
         },
         {
           "tenantId": "t060",
@@ -6710,7 +6830,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3557089999958407
+          "ms": 4.26908400002867
         },
         {
           "tenantId": "t061",
@@ -6721,7 +6841,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3755419999943115
+          "ms": 4.018540999968536
         },
         {
           "tenantId": "t062",
@@ -6732,7 +6852,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3601250000065193
+          "ms": 4.240833000047132
         },
         {
           "tenantId": "t063",
@@ -6743,7 +6863,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4465000000200234
+          "ms": 4.563416999997571
         },
         {
           "tenantId": "t064",
@@ -6754,7 +6874,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3589999999967404
+          "ms": 3.9356250000419095
         },
         {
           "tenantId": "t065",
@@ -6765,7 +6885,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.5960829999821726
+          "ms": 3.954041999997571
         },
         {
           "tenantId": "t066",
@@ -6776,7 +6896,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.7022500000020955
+          "ms": 3.835666000028141
         },
         {
           "tenantId": "t067",
@@ -6787,7 +6907,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3622080000059213
+          "ms": 3.75441600009799
         },
         {
           "tenantId": "t068",
@@ -6798,7 +6918,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.5332500000076834
+          "ms": 4.467333000036888
         },
         {
           "tenantId": "t069",
@@ -6809,7 +6929,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 8.570417000009911
+          "ms": 4.949707999941893
         },
         {
           "tenantId": "t070",
@@ -6820,7 +6940,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3279169999877922
+          "ms": 5.628334000008181
         },
         {
           "tenantId": "t071",
@@ -6831,7 +6951,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.387124999979278
+          "ms": 4.314291000016965
         },
         {
           "tenantId": "t072",
@@ -6842,7 +6962,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3925409999792464
+          "ms": 5.120332999969833
         },
         {
           "tenantId": "t073",
@@ -6853,7 +6973,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.357791999995243
+          "ms": 4.806875000009313
         },
         {
           "tenantId": "t074",
@@ -6864,7 +6984,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.268707999988692
+          "ms": 3.72641600004863
         },
         {
           "tenantId": "t075",
@@ -6875,7 +6995,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.30387500001234
+          "ms": 3.382709000026807
         },
         {
           "tenantId": "t076",
@@ -6886,7 +7006,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.31641599998693
+          "ms": 3.388791000004858
         },
         {
           "tenantId": "t077",
@@ -6897,7 +7017,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4104999999981374
+          "ms": 3.3209999999962747
         },
         {
           "tenantId": "t078",
@@ -6908,7 +7028,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2741250000253785
+          "ms": 3.461667000083253
         },
         {
           "tenantId": "t079",
@@ -6919,7 +7039,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2805830000143033
+          "ms": 3.497417000005953
         },
         {
           "tenantId": "t080",
@@ -6930,7 +7050,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2935419999994338
+          "ms": 3.4876660000300035
         },
         {
           "tenantId": "t081",
@@ -6941,7 +7061,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3167079999984708
+          "ms": 3.3897090000100434
         },
         {
           "tenantId": "t082",
@@ -6952,7 +7072,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3285000000032596
+          "ms": 3.426291999989189
         },
         {
           "tenantId": "t083",
@@ -6963,7 +7083,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3927919999987353
+          "ms": 5.085834000026807
         },
         {
           "tenantId": "t084",
@@ -6974,7 +7094,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3213749999995343
+          "ms": 4.301124999998137
         },
         {
           "tenantId": "t085",
@@ -6985,7 +7105,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.195000000006985
+          "ms": 5.140625
         },
         {
           "tenantId": "t086",
@@ -6996,7 +7116,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.741874999977881
+          "ms": 5.178290999960154
         },
         {
           "tenantId": "t087",
@@ -7007,7 +7127,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.472375000012107
+          "ms": 3.682624999899417
         },
         {
           "tenantId": "t088",
@@ -7018,7 +7138,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.4087910000234842
+          "ms": 3.481292000040412
         },
         {
           "tenantId": "t089",
@@ -7029,7 +7149,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.507540999999037
+          "ms": 3.624500000034459
         },
         {
           "tenantId": "t090",
@@ -7040,7 +7160,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2876669999968726
+          "ms": 3.4526670000050217
         },
         {
           "tenantId": "t091",
@@ -7051,7 +7171,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.339666000014404
+          "ms": 4.763875000062399
         },
         {
           "tenantId": "t092",
@@ -7062,7 +7182,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.339124999998603
+          "ms": 3.4637499999953434
         },
         {
           "tenantId": "t093",
@@ -7073,7 +7193,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.2519170000159647
+          "ms": 3.6304999999701977
         },
         {
           "tenantId": "t094",
@@ -7084,7 +7204,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.3368330000084825
+          "ms": 3.4358749999664724
         },
         {
           "tenantId": "t095",
@@ -7095,7 +7215,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.459625000017695
+          "ms": 3.509375000023283
         },
         {
           "tenantId": "t096",
@@ -7106,7 +7226,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.830458999989787
+          "ms": 5.134292000089772
         },
         {
           "tenantId": "t097",
@@ -7117,7 +7237,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.7917920000036247
+          "ms": 5.7604580000042915
         },
         {
           "tenantId": "t098",
@@ -7128,7 +7248,7 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.371584000007715
+          "ms": 5.559208000078797
         },
         {
           "tenantId": "t099",
@@ -7139,23 +7259,38 @@
           ],
           "sqlStatements": 1,
           "filesChanged": 0,
-          "ms": 3.5022920000192244
+          "ms": 4.702625000034459
         }
       ],
-      "emptyBytes": 175941763,
-      "loadedBytes": 253872491,
-      "decisionsStored": 10100,
+      "emptyBytes": 175952763,
+      "loadedBytes": 486238571,
+      "decisionsStored": 40100,
       "throughput": {
-        "runs": 5,
+        "runs": 20,
         "decisionsPerRun": 2000,
         "concurrency": 16,
         "connectionCeiling": 36,
         "decisionsPerSecond": [
-          2296.3186854035175,
-          2360.592852130475,
-          2354.3097921482818,
-          2288.401195632428,
-          2364.809157630819
+          2285.5205597675576,
+          2311.0564512365927,
+          2312.5005290567183,
+          2330.066095237561,
+          2408.190497664877,
+          2379.8527614846344,
+          2372.5449093599236,
+          2312.0443969121875,
+          2373.935727817065,
+          2300.1819940797927,
+          2349.6392422648873,
+          2345.528960026156,
+          2320.3375888857777,
+          2361.9562075604135,
+          2387.883283249929,
+          2334.9523164969214,
+          2400.112444308289,
+          2411.8673521193464,
+          2271.09180532156,
+          2444.7297544573908
         ]
       },
       "isolation": {

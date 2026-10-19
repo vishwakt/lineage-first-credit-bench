@@ -1,6 +1,6 @@
 {
   "size": 100000,
-  "commit": "55b830bfcc1883d2745a4e25be296d38971823bb",
+  "commit": "b1d8de1c08ee2de7c0120266b20b3a0c33aabf0b",
   "revisions": [
     "none",
     "adapter_rounding",
@@ -30,6 +30,13 @@
         "flaggedAffected": 0
       },
       "baseline_raw": {
+        "decisions": 100000,
+        "affected": 0,
+        "outcomeChanged": 0,
+        "flagged": 0,
+        "flaggedAffected": 0
+      },
+      "baseline_hardened": {
         "decisions": 100000,
         "affected": 0,
         "outcomeChanged": 0,
@@ -65,6 +72,13 @@
         "outcomeChanged": 0,
         "flagged": 0,
         "flaggedAffected": 0
+      },
+      "baseline_hardened": {
+        "decisions": 100000,
+        "affected": 22682,
+        "outcomeChanged": 14,
+        "flagged": 22682,
+        "flaggedAffected": 22682
       }
     },
     "quality_window": {
@@ -95,6 +109,13 @@
         "outcomeChanged": 5,
         "flagged": 0,
         "flaggedAffected": 0
+      },
+      "baseline_hardened": {
+        "decisions": 100000,
+        "affected": 944,
+        "outcomeChanged": 5,
+        "flagged": 944,
+        "flaggedAffected": 944
       }
     }
   }

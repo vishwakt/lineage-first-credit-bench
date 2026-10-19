@@ -1,102 +1,429 @@
 {
   "decisions": 50000,
+  "seeds": [
+    31001,
+    31002,
+    31003,
+    31004,
+    31005
+  ],
   "faultRates": {
     "missed": 0.01,
     "double": 0.01,
     "timing": 0.01
   },
-  "stats": {
-    "off": {
-      "injected": {
-        "timing": 14007,
-        "double": 14027,
-        "missed": 13968
+  "perSeed": {
+    "31001": {
+      "off": {
+        "injected": {
+          "timing": 13932,
+          "missed": 13888,
+          "double": 13930
+        },
+        "caught": {},
+        "escaped": {
+          "timing": 13932,
+          "missed": 13888,
+          "double": 13930
+        },
+        "unreconciled": 0,
+        "quarantined": 0,
+        "falseQuarantines": 0,
+        "altRecords": 1408884,
+        "outcomeDiffers": 448,
+        "outcomeDiffersWithFault": 448,
+        "decisionsWithFault": 27510
       },
-      "caught": {},
-      "escaped": {
-        "timing": 14007,
-        "double": 14027,
-        "missed": 13968
+      "xval": {
+        "injected": {
+          "timing": 13932,
+          "missed": 13888,
+          "double": 13930
+        },
+        "caught": {
+          "timing": 12003,
+          "missed": 12205,
+          "double": 13930
+        },
+        "escaped": {
+          "timing": 1929,
+          "missed": 1683
+        },
+        "unreconciled": 0,
+        "quarantined": 38317,
+        "falseQuarantines": 177,
+        "altRecords": 1408884,
+        "outcomeDiffers": 72,
+        "outcomeDiffersWithFault": 72,
+        "decisionsWithFault": 27510
       },
-      "unreconciled": 0,
-      "quarantined": 0,
-      "falseQuarantines": 0,
-      "altRecords": 1411788,
-      "outcomeDiffers": 480,
-      "outcomeDiffersWithFault": 480,
-      "decisionsWithFault": 27656
+      "xval_anomaly": {
+        "injected": {
+          "timing": 13932,
+          "missed": 13888,
+          "double": 13930
+        },
+        "caught": {
+          "timing": 12644,
+          "missed": 12848,
+          "double": 13930
+        },
+        "escaped": {
+          "missed": 1040,
+          "timing": 1288
+        },
+        "unreconciled": 0,
+        "quarantined": 48895,
+        "falseQuarantines": 9389,
+        "altRecords": 1408884,
+        "outcomeDiffers": 198,
+        "outcomeDiffersWithFault": 115,
+        "decisionsWithFault": 27510
+      }
     },
-    "xval": {
-      "injected": {
-        "timing": 14007,
-        "double": 14027,
-        "missed": 13968
+    "31002": {
+      "off": {
+        "injected": {
+          "double": 13862,
+          "timing": 13873,
+          "missed": 13745
+        },
+        "caught": {},
+        "escaped": {
+          "double": 13862,
+          "timing": 13873,
+          "missed": 13745
+        },
+        "unreconciled": 0,
+        "quarantined": 0,
+        "falseQuarantines": 0,
+        "altRecords": 1409880,
+        "outcomeDiffers": 429,
+        "outcomeDiffersWithFault": 429,
+        "decisionsWithFault": 27323
       },
-      "caught": {
-        "timing": 12038,
-        "double": 14027,
-        "missed": 12265
+      "xval": {
+        "injected": {
+          "double": 13862,
+          "timing": 13873,
+          "missed": 13745
+        },
+        "caught": {
+          "double": 13862,
+          "timing": 11989,
+          "missed": 12086
+        },
+        "escaped": {
+          "missed": 1659,
+          "timing": 1884
+        },
+        "unreconciled": 0,
+        "quarantined": 38089,
+        "falseQuarantines": 151,
+        "altRecords": 1409880,
+        "outcomeDiffers": 72,
+        "outcomeDiffersWithFault": 72,
+        "decisionsWithFault": 27323
       },
-      "escaped": {
-        "timing": 1969,
-        "missed": 1703
-      },
-      "unreconciled": 0,
-      "quarantined": 38525,
-      "falseQuarantines": 191,
-      "altRecords": 1411788,
-      "outcomeDiffers": 61,
-      "outcomeDiffersWithFault": 61,
-      "decisionsWithFault": 27656
+      "xval_anomaly": {
+        "injected": {
+          "double": 13862,
+          "timing": 13873,
+          "missed": 13745
+        },
+        "caught": {
+          "double": 13862,
+          "timing": 12640,
+          "missed": 12714
+        },
+        "escaped": {
+          "missed": 1031,
+          "timing": 1233
+        },
+        "unreconciled": 0,
+        "quarantined": 48821,
+        "falseQuarantines": 9512,
+        "altRecords": 1409880,
+        "outcomeDiffers": 182,
+        "outcomeDiffersWithFault": 119,
+        "decisionsWithFault": 27323
+      }
     },
-    "xval_anomaly": {
-      "injected": {
-        "timing": 14007,
-        "double": 14027,
-        "missed": 13968
+    "31003": {
+      "off": {
+        "injected": {
+          "double": 14130,
+          "timing": 14058,
+          "missed": 13751
+        },
+        "caught": {},
+        "escaped": {
+          "double": 14130,
+          "timing": 14058,
+          "missed": 13751
+        },
+        "unreconciled": 0,
+        "quarantined": 0,
+        "falseQuarantines": 0,
+        "altRecords": 1408572,
+        "outcomeDiffers": 481,
+        "outcomeDiffersWithFault": 481,
+        "decisionsWithFault": 27684
       },
-      "caught": {
-        "timing": 12697,
-        "double": 14027,
-        "missed": 12954
+      "xval": {
+        "injected": {
+          "double": 14130,
+          "timing": 14058,
+          "missed": 13751
+        },
+        "caught": {
+          "double": 14130,
+          "timing": 12192,
+          "missed": 12147
+        },
+        "escaped": {
+          "timing": 1866,
+          "missed": 1604
+        },
+        "unreconciled": 0,
+        "quarantined": 38650,
+        "falseQuarantines": 175,
+        "altRecords": 1408572,
+        "outcomeDiffers": 73,
+        "outcomeDiffersWithFault": 73,
+        "decisionsWithFault": 27684
       },
-      "escaped": {
-        "timing": 1310,
-        "missed": 1014
+      "xval_anomaly": {
+        "injected": {
+          "double": 14130,
+          "timing": 14058,
+          "missed": 13751
+        },
+        "caught": {
+          "double": 14130,
+          "timing": 12809,
+          "missed": 12725
+        },
+        "escaped": {
+          "timing": 1249,
+          "missed": 1026
+        },
+        "unreconciled": 0,
+        "quarantined": 48901,
+        "falseQuarantines": 9135,
+        "altRecords": 1408572,
+        "outcomeDiffers": 169,
+        "outcomeDiffersWithFault": 110,
+        "decisionsWithFault": 27684
+      }
+    },
+    "31004": {
+      "off": {
+        "injected": {
+          "timing": 14015,
+          "double": 14079,
+          "missed": 13870
+        },
+        "caught": {},
+        "escaped": {
+          "timing": 14015,
+          "double": 14079,
+          "missed": 13870
+        },
+        "unreconciled": 0,
+        "quarantined": 0,
+        "falseQuarantines": 0,
+        "altRecords": 1410360,
+        "outcomeDiffers": 471,
+        "outcomeDiffersWithFault": 471,
+        "decisionsWithFault": 27645
       },
-      "unreconciled": 0,
-      "quarantined": 49109,
-      "falseQuarantines": 9326,
-      "altRecords": 1411788,
-      "outcomeDiffers": 161,
-      "outcomeDiffersWithFault": 102,
-      "decisionsWithFault": 27656
+      "xval": {
+        "injected": {
+          "timing": 14015,
+          "double": 14079,
+          "missed": 13870
+        },
+        "caught": {
+          "timing": 12074,
+          "double": 14079,
+          "missed": 12181
+        },
+        "escaped": {
+          "timing": 1941,
+          "missed": 1689
+        },
+        "unreconciled": 0,
+        "quarantined": 38512,
+        "falseQuarantines": 175,
+        "altRecords": 1410360,
+        "outcomeDiffers": 64,
+        "outcomeDiffersWithFault": 64,
+        "decisionsWithFault": 27645
+      },
+      "xval_anomaly": {
+        "injected": {
+          "timing": 14015,
+          "double": 14079,
+          "missed": 13870
+        },
+        "caught": {
+          "timing": 12743,
+          "double": 14079,
+          "missed": 12787
+        },
+        "escaped": {
+          "timing": 1272,
+          "missed": 1083
+        },
+        "unreconciled": 0,
+        "quarantined": 49345,
+        "falseQuarantines": 9630,
+        "altRecords": 1410360,
+        "outcomeDiffers": 167,
+        "outcomeDiffersWithFault": 109,
+        "decisionsWithFault": 27645
+      }
+    },
+    "31005": {
+      "off": {
+        "injected": {
+          "timing": 13869,
+          "double": 14171,
+          "missed": 13852
+        },
+        "caught": {},
+        "escaped": {
+          "timing": 13869,
+          "double": 14171,
+          "missed": 13852
+        },
+        "unreconciled": 0,
+        "quarantined": 0,
+        "falseQuarantines": 0,
+        "altRecords": 1411680,
+        "outcomeDiffers": 455,
+        "outcomeDiffersWithFault": 455,
+        "decisionsWithFault": 27524
+      },
+      "xval": {
+        "injected": {
+          "timing": 13869,
+          "double": 14171,
+          "missed": 13852
+        },
+        "caught": {
+          "timing": 11893,
+          "double": 14171,
+          "missed": 12170
+        },
+        "escaped": {
+          "missed": 1682,
+          "timing": 1976
+        },
+        "unreconciled": 0,
+        "quarantined": 38423,
+        "falseQuarantines": 187,
+        "altRecords": 1411680,
+        "outcomeDiffers": 76,
+        "outcomeDiffersWithFault": 76,
+        "decisionsWithFault": 27524
+      },
+      "xval_anomaly": {
+        "injected": {
+          "timing": 13869,
+          "double": 14171,
+          "missed": 13852
+        },
+        "caught": {
+          "timing": 12502,
+          "double": 14171,
+          "missed": 12809
+        },
+        "escaped": {
+          "missed": 1043,
+          "timing": 1367
+        },
+        "unreconciled": 0,
+        "quarantined": 49217,
+        "falseQuarantines": 9637,
+        "altRecords": 1411680,
+        "outcomeDiffers": 174,
+        "outcomeDiffersWithFault": 114,
+        "decisionsWithFault": 27524
+      }
     }
   },
   "latency": {
+    "seed": 31001,
     "decisionsPerRun": 5000,
-    "runs": 5,
+    "runs": 20,
     "microsecondsPerDecision": {
       "off": [
-        396.7656750000024,
-        398.14040000000097,
-        393.93612500000165,
-        394.1445831999998,
-        401.3487666000001
+        390.1986332,
+        384.46503340000055,
+        382.72405000000725,
+        381.7036084000021,
+        384.34243339999813,
+        385.1396499999915,
+        383.0633083999972,
+        383.62939999999946,
+        382.72438339999644,
+        390.20423319999827,
+        380.66087499998974,
+        381.8345166000072,
+        381.9086499999976,
+        380.9181499999948,
+        383.43677499999757,
+        381.4670999999973,
+        380.74259160000366,
+        394.9813666000031,
+        383.8836916,
+        381.40694179999406
       ],
       "xval": [
-        405.9861249999987,
-        421.92386660000193,
-        403.27185839999873,
-        401.8042665999994,
-        411.3008000000002
+        399.9087415999966,
+        394.10642499999375,
+        393.5059833999956,
+        399.81456659999674,
+        394.65586680000416,
+        393.653583399998,
+        394.2278668000014,
+        394.26680840000046,
+        392.3818499999936,
+        393.46199999999953,
+        390.2114915999933,
+        392.8342249999987,
+        392.4556418000022,
+        392.4097832,
+        389.7182750000036,
+        392.2371750000049,
+        391.5038166000042,
+        396.09366680000676,
+        395.64357500000625,
+        398.10145839999893
       ],
       "xval_anomaly": [
-        417.7227916000004,
-        420.2937250000017,
-        401.2218583999987,
-        408.77265839999893,
-        409.1362250000006
+        395.8786418000003,
+        394.42744180000153,
+        393.8896999999997,
+        392.99040819999067,
+        396.1095165999956,
+        396.1908666000003,
+        394.74005840000467,
+        393.8406749999965,
+        394.8297166000004,
+        398.29878320000137,
+        390.9423084000009,
+        391.9632999999914,
+        391.2824499999988,
+        392.64907499999975,
+        392.78892500000075,
+        390.8881999999983,
+        399.27710840000077,
+        389.3843665999943,
+        400.44901660000903,
+        401.51209999999264
       ]
     }
   }

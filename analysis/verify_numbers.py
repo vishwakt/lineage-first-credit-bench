@@ -161,6 +161,7 @@ for path in sorted(glob.glob(os.path.join(RAW, "rq2_code_drift_*.json"))):
             # Decisions a revision breaks on top of the design's other replay mismatches; a
             # revision here can only break a reconstruction, never repair one.
             put(f"{p}.newly_affected", t["affected"] - control[d]["affected"])
+            put(f"{p}.eligible", size - control[d]["affected"])
             put(f"{p}.detection_share", t["flaggedAffected"] / t["affected"] if t["affected"] else None)
             put(f"{p}.false_alarms", t["flagged"] - t["flaggedAffected"])
             check(f"rq2drift {size} {rev} {d}: every decision replayed", t["decisions"] == size)

@@ -4,8 +4,8 @@ Written by `experiments/environment.ts` at the end of `scripts/reproduce.sh`; it
 
 | Item | Value |
 |---|---|
-| Commit | `2f37998f402f621c3f2db2cf2da3bcba948e649a` |
-| Date (UTC) | 2026-10-16 09:13 |
+| Commit | `b1d8de1c08ee2de7c0120266b20b3a0c33aabf0b` |
+| Date (UTC) | 2026-10-19 02:41 |
 | CPU | Apple M5, 10 logical cores |
 | Memory | 32 GiB |
 | Operating system | darwin 25.2.0 (macOS 26.2) |
