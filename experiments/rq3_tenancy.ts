@@ -21,7 +21,7 @@ import { runIsolationSuite, summarize } from "../src/tenancy/isolation.ts";
 import { Tenancy, TENANCY_MODES, type OnboardingRecord, type TenantSpec } from "../src/tenancy/tenancy.ts";
 import type { SourceId } from "../src/core/types.ts";
 
-const RUNS = Number(process.env.RUNS ?? 5);
+const RUNS = Number(process.env.RUNS ?? 20);
 const M = Number(process.env.M ?? 2000);
 const C = Number(process.env.C ?? 16);
 const fetch = (s: SourceId, c: string, a: string) => fetchFromProvider(DEFAULT_WORLD, s, c, a).response;

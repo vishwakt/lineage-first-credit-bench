@@ -20,6 +20,7 @@ export const DESIGNS: Record<string, Design> = {
   baseline_parsed: baselineDesign("parsed"),
   baseline_normalized: baselineDesign("normalized"),
   baseline_raw: baselineDesign("raw"),
+  baseline_hardened: baselineDesign("hardened"),
 };
 export const DESIGN_NAMES = Object.keys(DESIGNS);
 export const REPLAY_NOW = "2026-01-01";

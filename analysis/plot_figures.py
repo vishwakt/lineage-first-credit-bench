@@ -19,10 +19,11 @@ N = json.load(open("results/derived/numbers.json"))["numbers"]
 OUT = "figures"
 os.makedirs(OUT, exist_ok=True)
 
-BLUE, ORANGE, AQUA, YELLOW = "#2a78d6", "#eb6834", "#1baf7a", "#eda100"
+BLUE, ORANGE, AQUA, YELLOW, MAGENTA = "#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4"
 INK, MUTED, GRID = "#0b0b0b", "#52514e", "#e4e3df"
 DESIGNS = [("lineage", "Lineage first", BLUE, "o", ""), ("baseline_parsed", "Baseline, parsed", ORANGE, "s", "//"),
-           ("baseline_normalized", "Baseline, normalized", AQUA, "^", ".."), ("baseline_raw", "Baseline, raw", YELLOW, "D", "xx")]
+           ("baseline_normalized", "Baseline, normalized", AQUA, "^", ".."), ("baseline_raw", "Baseline, raw", YELLOW, "D", "xx"),
+           ("baseline_hardened", "Baseline, hardened", MAGENTA, "v", "\\\\")]
 MODES = [("silo", "Silo", BLUE, "o"), ("pool", "Pool", ORANGE, "s"), ("bridge", "Bridge", AQUA, "^")]
 
 plt.rcParams.update({"font.size": 9, "axes.edgecolor": MUTED, "axes.labelcolor": INK, "xtick.color": MUTED, "ytick.color": MUTED,
@@ -58,10 +59,10 @@ save(fig, "fig1_rq1_footprint")
 size = sizes()[-1]
 classes = [("no_drift", "No drift"), ("format_drift_only", "Format drift\nonly"), ("refdata_drift", "Reference-data\ndrift")]
 fig, axes = plt.subplots(1, 2, figsize=(7, 3), sharey=True)
-width = 0.2
+width = 0.16
 for ax, metric, title in [(axes[0], "modelInputExact", "Model input byte identical"), (axes[1], "rawExact", "Raw payloads byte identical")]:
     for i, (key, name, color, _, hatch) in enumerate(DESIGNS):
-        xs = [c + (i - 1.5) * width for c in range(len(classes))]
+        xs = [c + (i - (len(DESIGNS) - 1) / 2) * width for c in range(len(classes))]
         ys = [100 * N[f"rq2.{size}.{key}.{cls}.{metric}_share"] for cls, _ in classes]
         ax.bar(xs, ys, width * 0.9, color=color, hatch=hatch, edgecolor="white", linewidth=0.5, label=name)
         for x, y in zip(xs, ys):
@@ -72,7 +73,7 @@ for ax, metric, title in [(axes[0], "modelInputExact", "Model input byte identic
     ax.set_ylim(0, 105)
 axes[0].set_ylabel("Decisions replayed (%)")
 fig.suptitle(f"Corpus of {size:,} decisions", fontsize=9, color=MUTED)
-fig.legend(*axes[0].get_legend_handles_labels(), loc="lower center", ncol=4, fontsize=8)
+fig.legend(*axes[0].get_legend_handles_labels(), loc="lower center", ncol=5, fontsize=7)
 save(fig, "fig2_rq2_fidelity", rect=(0, 0.1, 1, 1))
 
 # Figure 3: RQ2 replay latency against corpus size

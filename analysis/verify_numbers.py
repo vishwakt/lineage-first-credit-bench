@@ -2,7 +2,7 @@
 
 Reads results/raw/*.json, writes results/derived/numbers.json (flat, stable keys that the
 manuscript cites), and exits non-zero if any consistency
-check fails. Uses only the Python standard library.
+check fails. Uses the standard library plus numpy for the bootstrap (docs/ANALYSIS_PLAN.md).
 
 Usage: python3 analysis/verify_numbers.py
 """
@@ -13,6 +13,8 @@ import math
 import os
 import statistics
 import sys
+
+import numpy as np
 
 RAW = "results/raw"
 OUT = "results/derived"
@@ -122,6 +124,23 @@ for path in sorted(glob.glob(os.path.join(RAW, "rq2_[0-9]*.json"))):
     for d in r["latencyRuns"][0]:
         for q in ("p50", "p99", "mean"):
             put_summary(f"rq2.{size}.{d}.latency_ms.{q}", [run[d][q] for run in r["latencyRuns"]])
+            if d != "lineage":
+                # Paired by run: every design replays the same sampled decisions in a run.
+                put_summary(f"rq2.{size}.{d}.latency_ms.{q}.paired_minus_lineage", [run[d][q] - run["lineage"][q] for run in r["latencyRuns"]])
+    samples_path = os.path.join(RAW, f"rq2_latency_samples_{size}.json")
+    if os.path.exists(samples_path):
+        runs = json.load(open(samples_path))["runs"]
+        rng = np.random.default_rng(20261018)
+        for d in runs[0]:
+            pooled = np.concatenate([np.asarray(run[d]) for run in runs])
+            for q, qq in (("p50", 0.5), ("p99", 0.99)):
+                # Percentile bootstrap of the quantile over all replays pooled across runs.
+                boots = np.quantile(rng.choice(pooled, size=(1000, pooled.size), replace=True), qq, axis=1)
+                put(f"rq2.{size}.{d}.latency_ms.{q}.pooled", float(np.quantile(pooled, qq)))
+                put(f"rq2.{size}.{d}.latency_ms.{q}.pooled_boot_low", float(np.quantile(boots, 0.025)))
+                put(f"rq2.{size}.{d}.latency_ms.{q}.pooled_boot_high", float(np.quantile(boots, 0.975)))
+            put(f"rq2.{size}.{d}.latency_samples", int(pooled.size))
+        check(f"rq2 {size}: latency samples match the run count", len(runs) == len(r["latencyRuns"]))
     check(f"rq2 {size}: at least 5 latency runs", len(r["latencyRuns"]) >= 5)
     put(f"rq2.{size}.size", size)
     put(f"rq2.{size}.latency_runs", len(r["latencyRuns"]))
@@ -192,35 +211,95 @@ for row in r3["results"]:
         / sum(row["isolation"]["summary"][f"{a}|all"]["attempts"] for a in ("api_read", "api_replay", "scoped_query")))
     put(f"{p}.isolation_attempts_total", sum(v["attempts"] for k, v in row["isolation"]["summary"].items() if k.endswith("|all")))
 
+# RQ3 throughput equivalence against pool: margin 10% of the pool mean, two one-sided tests
+# at alpha 0.05, that is, the 90% Welch interval of the difference must lie inside the margin.
+T95_ONE = {1: 6.314, 2: 2.920, 3: 2.353, 4: 2.132, 5: 2.015, 6: 1.943, 7: 1.895, 8: 1.860, 9: 1.833, 10: 1.812,
+           12: 1.782, 15: 1.753, 20: 1.725, 25: 1.708, 30: 1.697, 40: 1.684, 60: 1.671}
+
+
+def t95_one(df):
+    keys = sorted(k for k in T95_ONE if k <= df)
+    return T95_ONE[keys[-1]] if keys else T95_ONE[1]
+
+
+rows = {(row["mode"], row["tenants"]): row for row in r3["results"]}
+for (mode, t), row in rows.items():
+    if mode == "pool":
+        continue
+    a = row["throughput"]["decisionsPerSecond"]
+    b = rows[("pool", t)]["throughput"]["decisionsPerSecond"]
+    va, vb = statistics.variance(a) / len(a), statistics.variance(b) / len(b)
+    diff = statistics.fmean(a) - statistics.fmean(b)
+    se = math.sqrt(va + vb)
+    df = (va + vb) ** 2 / (va ** 2 / (len(a) - 1) + vb ** 2 / (len(b) - 1))
+    lo, hi = diff - t95_one(int(df)) * se, diff + t95_one(int(df)) * se
+    margin = 0.10 * statistics.fmean(b)
+    verdict = "equivalent" if -margin < lo and hi < margin else ("different" if (lo > margin or hi < -margin) else "not_established")
+    p = f"rq3.{mode}.{t}.vs_pool"
+    put(f"{p}.difference", diff)
+    put(f"{p}.difference_share", diff / statistics.fmean(b))
+    put(f"{p}.ci90_low", lo)
+    put(f"{p}.ci90_high", hi)
+    put(f"{p}.margin", margin)
+    put(f"{p}.verdict", verdict)
+
 # RQ4
 r4 = load("rq4_faults.json")
 lat_off = r4["latency"]["microsecondsPerDecision"]["off"]
-for mode, st in r4["stats"].items():
+seeds = [str(x) for x in r4["seeds"]]
+put("rq4.seed_count", len(seeds))
+for mode in r4["perSeed"][seeds[0]]:
     p = f"rq4.{mode}"
-    injected = sum(st["injected"].values())
-    caught = sum(st["caught"].values())
-    escaped = sum(st["escaped"].values())
+    pooled = {"injected": {}, "caught": {}, "escaped": {}}
+    totals = {k: 0 for k in ("quarantined", "falseQuarantines", "altRecords", "outcomeDiffers", "decisionsWithFault", "unreconciled")}
+    per_seed = {"escape_share": [], "caught_share": [], "false_quarantine_share": [], "outcome_differs": []}
+    for sd in seeds:
+        st = r4["perSeed"][sd][mode]
+        inj, cau, esc = sum(st["injected"].values()), sum(st["caught"].values()), sum(st["escaped"].values())
+        for k in ("injected", "caught", "escaped"):
+            for t, v in st[k].items():
+                pooled[k][t] = pooled[k].get(t, 0) + v
+        for k in totals:
+            totals[k] += st[k]
+        put(f"{p}.seed.{sd}.injected", inj)
+        put(f"{p}.seed.{sd}.caught", cau)
+        put(f"{p}.seed.{sd}.escaped", esc)
+        put(f"{p}.seed.{sd}.outcome_differs", st["outcomeDiffers"])
+        put(f"{p}.seed.{sd}.false_quarantines", st["falseQuarantines"])
+        per_seed["escape_share"].append(esc / inj)
+        per_seed["caught_share"].append(cau / inj)
+        per_seed["false_quarantine_share"].append(st["falseQuarantines"] / st["altRecords"])
+        per_seed["outcome_differs"].append(st["outcomeDiffers"])
+        check(f"rq4 {mode} seed {sd}: every injected fault reconciles as caught or escaped", st["unreconciled"] == 0 and cau + esc == inj)
+    for k, xs in per_seed.items():
+        put_summary(f"{p}.across_seeds.{k}", xs)
+    injected, caught, escaped = (sum(pooled[k].values()) for k in ("injected", "caught", "escaped"))
     put(f"{p}.injected", injected)
     put(f"{p}.caught", caught)
     put(f"{p}.escaped", escaped)
     put(f"{p}.escape_share", escaped / injected)
     put(f"{p}.caught_share", caught / injected)
-    for t in st["injected"]:
-        put(f"{p}.{t}.injected", st["injected"][t])
-        put(f"{p}.{t}.escape_share", st["escaped"].get(t, 0) / st["injected"][t])
-    put(f"{p}.quarantined", st["quarantined"])
-    put(f"{p}.false_quarantines", st["falseQuarantines"])
-    put(f"{p}.false_quarantine_share", st["falseQuarantines"] / st["altRecords"])
-    put(f"{p}.alt_records", st["altRecords"])
-    put(f"{p}.outcome_differs", st["outcomeDiffers"])
-    put(f"{p}.outcome_differs_share", st["outcomeDiffers"] / r4["decisions"])
-    put(f"{p}.decisions_with_fault", st["decisionsWithFault"])
+    for t in pooled["injected"]:
+        put(f"{p}.{t}.injected", pooled["injected"][t])
+        put(f"{p}.{t}.escaped", pooled["escaped"].get(t, 0))
+        put(f"{p}.{t}.escape_share", pooled["escaped"].get(t, 0) / pooled["injected"][t])
+    put(f"{p}.quarantined", totals["quarantined"])
+    put(f"{p}.false_quarantines", totals["falseQuarantines"])
+    put(f"{p}.false_quarantine_share", totals["falseQuarantines"] / totals["altRecords"])
+    put(f"{p}.alt_records", totals["altRecords"])
+    put(f"{p}.outcome_differs", totals["outcomeDiffers"])
+    put(f"{p}.outcome_differs_share", totals["outcomeDiffers"] / (r4["decisions"] * len(seeds)))
+    put(f"{p}.decisions_with_fault", totals["decisionsWithFault"])
     lat = r4["latency"]["microsecondsPerDecision"][mode]
     put_summary(f"{p}.latency_us", lat)
     put_summary(f"{p}.added_latency_us", [a - b for a, b in zip(lat, lat_off)])
-    check(f"rq4 {mode}: every injected fault reconciles as caught or escaped", st["unreconciled"] == 0 and caught + escaped == injected)
+for mode in ("xval", "xval_anomaly"):
+    off, m = numbers["rq4.off.outcome_differs"], numbers[f"rq4.{mode}.outcome_differs"]
+    put(f"rq4.{mode}.outcome_differs_reduction_share", (off - m) / off)
+put("rq4.decisions_total", r4["decisions"] * len(seeds))
 put("rq4.decisions", r4["decisions"])
 put("rq4.latency_runs", r4["latency"]["runs"])
+put("rq4.latency_seed", r4["latency"]["seed"])
 put("rq4.latency_decisions_per_run", r4["latency"]["decisionsPerRun"])
 for t, rate in r4["faultRates"].items():
     put(f"rq4.fault_rate.{t}", rate)

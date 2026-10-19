@@ -12,7 +12,7 @@ import { config } from "../src/db/db.ts";
 import { Rng } from "../src/generator/rng.ts";
 import { build, corpusRequest, DESIGN_NAMES, DESIGNS, harnessDb, prefixFor, prepare, REPLAY_NOW, tenancyFor } from "./lib/corpus.ts";
 
-const RUNS = Number(process.env.RUNS ?? 5);
+const RUNS = Number(process.env.RUNS ?? 20);
 const SAMPLE = Number(process.env.SAMPLE ?? 1000);
 const WARMUP = 200;
 const WORKERS = Number(process.env.WORKERS ?? Math.max(2, availableParallelism() - 2));
@@ -60,6 +60,7 @@ async function latencyRun(size: number, run: number) {
   const rng = new Rng(9000 + run);
   const ids = Array.from({ length: SAMPLE + WARMUP }, () => rng.int(0, size - 1));
   const out: Record<string, { p50: number; p99: number; mean: number }> = {};
+  const samples: Record<string, number[]> = {};
   // Rotate the design order between runs so no design always goes first.
   const order = DESIGN_NAMES.map((_, k) => DESIGN_NAMES[(k + run) % DESIGN_NAMES.length]);
   for (const name of order) {
@@ -74,10 +75,12 @@ async function latencyRun(size: number, run: number) {
       if (k >= WARMUP) times.push(ms);
     }
     await tenancy.close();
-    times.sort((a, b) => a - b);
-    out[name] = { p50: quantile(times, 0.5), p99: quantile(times, 0.99), mean: times.reduce((s, x) => s + x, 0) / times.length };
+    // Keep each replay time (microsecond resolution) in sampling order for the bootstrap.
+    samples[name] = times.map((t) => Math.round(t * 1000) / 1000);
+    const sorted = [...times].sort((a, b) => a - b);
+    out[name] = { p50: quantile(sorted, 0.5), p99: quantile(sorted, 0.99), mean: times.reduce((s, x) => s + x, 0) / times.length };
   }
-  return out;
+  return { out, samples };
 }
 
 const sizes = process.argv.slice(2).map(Number);
@@ -106,10 +109,14 @@ for (const size of sizes) {
     console.log(`fidelity ${name} ${((performance.now() - t0) / 1000).toFixed(1)}s`, JSON.stringify(fid[name]));
   }
   const runs = [];
+  const samples = [];
   for (let r = 0; r < RUNS; r++) {
-    runs.push(await latencyRun(size, r));
-    console.log(`latency run ${r}`, JSON.stringify(runs[r]));
+    const { out, samples: s } = await latencyRun(size, r);
+    runs.push(out);
+    samples.push(s);
+    console.log(`latency run ${r}`, JSON.stringify(out));
   }
+  writeFileSync(`results/raw/rq2_latency_samples_${size}.json`, JSON.stringify({ size, unit: "ms", runs: samples }) + "\n");
   writeFileSync(
     `results/raw/rq2_${size}.json`,
     JSON.stringify({ size, replayNow: REPLAY_NOW, designs: DESIGN_NAMES.map((n) => DESIGNS[n].name), buildSeconds, workers: WORKERS,

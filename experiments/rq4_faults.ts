@@ -6,7 +6,8 @@
 //   decision effect   outcome differs from the fault-free truth
 // Every injected fault must reconcile as exactly one of caught or escaped.
 // Latency: RUNS timed passes of the full ingestion pipeline per mode.
-// Usage: node experiments/rq4_faults.ts [decisions]
+// Worlds: one per evaluation seed (docs/ANALYSIS_PLAN.md); the development seed is not used.
+// Usage: node experiments/rq4_faults.ts [decisions]   (SEEDS=31001,31002 to override)
 
 import { mkdirSync, writeFileSync } from "node:fs";
 import { runDecision, type Fetch } from "../src/core/pipeline.ts";
@@ -18,15 +19,14 @@ import { QUALITY_MODES, type QualityMode } from "../src/quality/layer.ts";
 import { corpusRequest } from "./lib/corpus.ts";
 
 const N = Number(process.argv[2] ?? 50_000);
-const RUNS = Number(process.env.RUNS ?? 5);
-const CLEAN = { ...DEFAULT_WORLD, faults: NO_FAULTS };
+const RUNS = Number(process.env.RUNS ?? 20);
+const SEEDS = (process.env.SEEDS ?? "31001,31002,31003,31004,31005").split(",").map(Number);
 
-const faultyFetch = (sink: InjectedFault[]): Fetch => (s, c, a) => {
-  const { response, truth } = fetchFromProvider(DEFAULT_WORLD, s, c, a);
+const faultyFetch = (world: typeof DEFAULT_WORLD, sink: InjectedFault[]): Fetch => (s, c, a) => {
+  const { response, truth } = fetchFromProvider(world, s, c, a);
   sink.push(...truth.faults);
   return response;
 };
-const cleanFetch: Fetch = (s, c, a) => fetchFromProvider(CLEAN, s, c, a).response;
 
 type ModeStats = {
   injected: Record<string, number>; caught: Record<string, number>; escaped: Record<string, number>;
@@ -38,6 +38,10 @@ const blank = (): ModeStats => ({ injected: {}, caught: {}, escaped: {}, unrecon
 const inc = (o: Record<string, number>, k: string) => (o[k] = (o[k] ?? 0) + 1);
 const same = (a: AltPayment, b: AltPayment) => a.paid === b.paid && a.status === b.status;
 
+function evaluate(seed: number): Record<QualityMode, ModeStats> {
+const world = { ...DEFAULT_WORLD, seed };
+const clean = { ...world, faults: NO_FAULTS };
+const cleanFetch: Fetch = (s, c, a) => fetchFromProvider(clean, s, c, a).response;
 const stats: Record<QualityMode, ModeStats> = { off: blank(), xval: blank(), xval_anomaly: blank() };
 for (let i = 0; i < N; i++) {
   const req = corpusRequest(i);
@@ -46,7 +50,7 @@ for (let i = 0; i < N; i++) {
   for (const [s, p] of Object.entries(truth.file.parts)) for (const a of p!.altPayments) cleanRecords.set(`${s}|${a.period}`, a);
   for (const mode of QUALITY_MODES) {
     const faults: InjectedFault[] = [];
-    const run = runDecision(req, faultyFetch(faults), mode);
+    const run = runDecision(req, faultyFetch(world, faults), mode);
     const st = stats[mode];
     const faultKeys = new Set(faults.map((f) => `${f.source}|${f.period}`));
     const q = new Set(run.file.quarantined.map((x) => `${x.source}|${x.period}`));
@@ -75,6 +79,15 @@ for (let i = 0; i < N; i++) {
   }
 }
 
+return stats;
+}
+
+const perSeed: Record<string, Record<QualityMode, ModeStats>> = {};
+for (const seed of SEEDS) {
+  perSeed[seed] = evaluate(seed);
+  for (const m of QUALITY_MODES) console.log(seed, m, JSON.stringify(perSeed[seed][m]));
+}
+
 // Ingestion latency per decision (retrieval, decoding, normalization, quality layer, model).
 const LAT_N = Math.min(N, 5000);
 const latency: Record<string, number[]> = { off: [], xval: [], xval_anomaly: [] };
@@ -82,15 +95,15 @@ const sink: InjectedFault[] = [];
 for (let r = 0; r < RUNS; r++) {
   const order = QUALITY_MODES.map((_, k) => QUALITY_MODES[(k + r) % QUALITY_MODES.length]);
   for (const mode of order) {
-    for (let i = 0; i < 300; i++) runDecision(corpusRequest(i), faultyFetch(sink), mode); // warm-up
+    for (let i = 0; i < 300; i++) runDecision(corpusRequest(i), faultyFetch({ ...DEFAULT_WORLD, seed: SEEDS[0] }, sink), mode); // warm-up
     const t0 = performance.now();
-    for (let i = 0; i < LAT_N; i++) runDecision(corpusRequest(i), faultyFetch(sink), mode);
+    for (let i = 0; i < LAT_N; i++) runDecision(corpusRequest(i), faultyFetch({ ...DEFAULT_WORLD, seed: SEEDS[0] }, sink), mode);
     latency[mode].push(((performance.now() - t0) / LAT_N) * 1000);
     sink.length = 0;
   }
 }
 
 mkdirSync("results/raw", { recursive: true });
-writeFileSync("results/raw/rq4_faults.json", JSON.stringify({ decisions: N, faultRates: DEFAULT_WORLD.faults, stats,
-  latency: { decisionsPerRun: LAT_N, runs: RUNS, microsecondsPerDecision: latency } }, null, 2) + "\n");
-for (const m of QUALITY_MODES) console.log(m, JSON.stringify(stats[m]), latency[m].map((x) => x.toFixed(0)).join(" "));
+writeFileSync("results/raw/rq4_faults.json", JSON.stringify({ decisions: N, seeds: SEEDS, faultRates: DEFAULT_WORLD.faults, perSeed,
+  latency: { seed: SEEDS[0], decisionsPerRun: LAT_N, runs: RUNS, microsecondsPerDecision: latency } }, null, 2) + "\n");
+for (const m of QUALITY_MODES) console.log("latency", m, latency[m].map((x) => x.toFixed(0)).join(" "));

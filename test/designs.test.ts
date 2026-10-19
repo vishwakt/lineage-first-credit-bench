@@ -39,7 +39,7 @@ for (const design of designs) {
         const key = adapterFor(s).dictionary;
         return key !== null && dictionaryAt(key, req.asOf)!.version !== dictionaryAt(key, NOW)!.version;
       });
-      if (design.name === "lineage") {
+      if (design.name === "lineage" || design.name === "baseline_hardened") {
         assert.equal(rep.integrity, "verified");
         for (const r of run.retrievals) assert.ok(rep.raw[r.source]!.equals(r.bytes), `raw ${r.source}`);
       }
@@ -59,6 +59,12 @@ test("lineage substrate is append only, even for the application role", async ()
   await assert.rejects(owner.query("UPDATE lineage.decision SET outcome = 'APPROVE'"), /append only/);
   await assert.rejects(owner.query("DELETE FROM lineage.decision"), /append only/);
   await assert.rejects(owner.query("TRUNCATE lineage.retrieval"), /append only/);
+});
+
+test("hardened baseline tables are append only, even for their owner", async () => {
+  const owner = tenancy.pool("ta");
+  await assert.rejects(owner.query("UPDATE baseline.decision_log SET outcome = 'APPROVE'"), /append only/);
+  await assert.rejects(owner.query("DELETE FROM baseline.audit_bureau_a"), /append only/);
 });
 
 test("every table holding tenant data has row-level security", async () => {
