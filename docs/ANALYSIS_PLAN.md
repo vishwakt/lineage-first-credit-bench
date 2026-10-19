@@ -22,3 +22,7 @@ Committed on 18 Oct 2026, before any revision run, so that the margins, seeds, a
 ## Not changed in this revision
 
 RQ1 source order is not counterbalanced and no new noise types are added to the generator; both are reported as limitations.
+
+## Deviation recorded on 19 Oct 2026, after the revision runs
+
+The plan above specified a percentile bootstrap within each run and a pooled interval across runs, and the first analysis of the revision runs reported the pooled interval, a bootstrap over all replays of a corpus. A reviewer pointed out that pooling treats the 20,000 replays of a corpus as independent and ignores variation between runs, so it understates uncertainty (for the lineage median at 1,000,000 decisions it gave 2.34 to 2.35 ms). The reported quantile intervals now come from a two-stage paired bootstrap: 2,000 resamples, each drawing runs with replacement and then replays with replacement within every drawn run, with the same replay indices for every design, because within a run all designs replayed the same decisions in the same order. Each resample's statistic is the mean over runs of the per-run quantile; paired differences are taken within each resample. The run-level t intervals are unchanged and are reported alongside. No data were rerun; only `analysis/verify_numbers.py` changed.

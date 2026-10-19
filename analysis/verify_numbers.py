@@ -130,16 +130,32 @@ for path in sorted(glob.glob(os.path.join(RAW, "rq2_[0-9]*.json"))):
     samples_path = os.path.join(RAW, f"rq2_latency_samples_{size}.json")
     if os.path.exists(samples_path):
         runs = json.load(open(samples_path))["runs"]
-        rng = np.random.default_rng(20261018)
-        for d in runs[0]:
-            pooled = np.concatenate([np.asarray(run[d]) for run in runs])
-            for q, qq in (("p50", 0.5), ("p99", 0.99)):
-                # Percentile bootstrap of the quantile over all replays pooled across runs.
-                boots = np.quantile(rng.choice(pooled, size=(1000, pooled.size), replace=True), qq, axis=1)
-                put(f"rq2.{size}.{d}.latency_ms.{q}.pooled", float(np.quantile(pooled, qq)))
-                put(f"rq2.{size}.{d}.latency_ms.{q}.pooled_boot_low", float(np.quantile(boots, 0.025)))
-                put(f"rq2.{size}.{d}.latency_ms.{q}.pooled_boot_high", float(np.quantile(boots, 0.975)))
-            put(f"rq2.{size}.{d}.latency_samples", int(pooled.size))
+        designs = list(runs[0])
+        # Two-stage paired bootstrap (docs/ANALYSIS_PLAN.md, deviation of 19 Oct 2026): resample
+        # runs, then replays within each chosen run. Within a run every design replayed the same
+        # decisions in the same order, so one set of replay indices serves all designs (pairing).
+        data = {d: np.asarray([run[d] for run in runs]) for d in designs}  # runs x replays
+        n_runs, n_rep = data[designs[0]].shape
+        rng = np.random.default_rng(20261019)
+        B, CHUNK = 2000, 100
+        stats = {(d, q): [] for d in designs for q in ("p50", "p99")}
+        for _ in range(B // CHUNK):
+            ri = rng.integers(0, n_runs, size=(CHUNK, n_runs))
+            ji = rng.integers(0, n_rep, size=(CHUNK, n_runs, n_rep))
+            for d in designs:
+                x = data[d][ri[:, :, None], ji]  # CHUNK x runs x replays
+                for q, qq in (("p50", 0.5), ("p99", 0.99)):
+                    stats[(d, q)].append(np.quantile(x, qq, axis=2).mean(axis=1))
+        for (d, q), parts in stats.items():
+            est = np.concatenate(parts)
+            put(f"rq2.{size}.{d}.latency_ms.{q}.boot_low", float(np.quantile(est, 0.025)))
+            put(f"rq2.{size}.{d}.latency_ms.{q}.boot_high", float(np.quantile(est, 0.975)))
+            if d != "lineage":
+                diff = est - np.concatenate(stats[("lineage", q)])
+                put(f"rq2.{size}.{d}.latency_ms.{q}.paired_minus_lineage.boot_low", float(np.quantile(diff, 0.025)))
+                put(f"rq2.{size}.{d}.latency_ms.{q}.paired_minus_lineage.boot_high", float(np.quantile(diff, 0.975)))
+        for d in designs:
+            put(f"rq2.{size}.{d}.latency_samples", int(data[d].size))
         check(f"rq2 {size}: latency samples match the run count", len(runs) == len(r["latencyRuns"]))
     check(f"rq2 {size}: at least 5 latency runs", len(r["latencyRuns"]) >= 5)
     put(f"rq2.{size}.size", size)

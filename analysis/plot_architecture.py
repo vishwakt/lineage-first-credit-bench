@@ -28,7 +28,7 @@ def arrow(ax, x1, y1, x2, y2, color=MUTED, style="-|>"):
 
 
 fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.6))
-for ax, title in zip(axes, ["(a) Baseline: per-integration audit logs", "(b) Lineage first: one append-only substrate"]):
+for ax, title in zip(axes, ["(a) Baseline: per-integration audit logs, four levels", "(b) Lineage first: one append-only substrate"]):
     ax.set_xlim(-0.02, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
@@ -43,9 +43,9 @@ for ax, title in zip(axes, ["(a) Baseline: per-integration audit logs", "(b) Lin
 
 ax = axes[0]
 for i in range(3):
-    box(ax, 0.52, 0.78 - i * 0.2, 0.46, 0.12, f"Audit table {['1', '2', 'N'][i]}\n(own schema and migration)", BASE, EDGE_BASE, size=6.5)
+    box(ax, 0.52, 0.78 - i * 0.2, 0.46, 0.12, f"Audit table {['1', '2', 'N'][i]} (own schema)\nhardened level adds raw bytes,\nhash, versions, append only", BASE, EDGE_BASE, size=6.5)
     arrow(ax, 0.44, 0.84 - i * 0.2, 0.52, 0.84 - i * 0.2, EDGE_BASE)
-box(ax, 0.52, 0.06, 0.46, 0.2, "Decision log\nReplay: one query per source,\nno integrity check", BASE, EDGE_BASE, size=6.5)
+box(ax, 0.52, 0.06, 0.46, 0.2, "Decision log\nOther levels: a query per\nsource, no hash check\nHardened: one query, verified", BASE, EDGE_BASE, size=6.5)
 arrow(ax, 0.44, 0.16, 0.52, 0.16, EDGE_BASE)
 
 ax = axes[1]
