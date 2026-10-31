@@ -227,6 +227,15 @@ for row in r3["results"]:
         sum(row["isolation"]["summary"][f"{a}|all"]["blocked"] for a in ("api_read", "api_replay", "scoped_query"))
         / sum(row["isolation"]["summary"][f"{a}|all"]["attempts"] for a in ("api_read", "api_replay", "scoped_query")))
     put(f"{p}.isolation_attempts_total", sum(v["attempts"] for k, v in row["isolation"]["summary"].items() if k.endswith("|all")))
+    if "checkpointsDuringRuns" in row["throughput"]:
+        put(f"{p}.checkpoints_during_runs", row["throughput"]["checkpointsDuringRuns"])
+    put(f"{p}.seconds_per_run", row["throughput"]["decisionsPerRun"] / statistics.fmean(row["throughput"]["decisionsPerSecond"]))
+# Persists per timed run before the amendment of 30 Oct 2026 (commit b1d8de1, results 28fb3ec).
+put("rq3.first_decisions_per_run", 2000)
+cps = [row["throughput"]["checkpointsDuringRuns"] for row in r3["results"] if "checkpointsDuringRuns" in row["throughput"]]
+if cps:
+    put("rq3.checkpoints_min", min(cps))
+    put("rq3.checkpoints_max", max(cps))
 
 # RQ3 throughput equivalence against pool: margin 10% of the pool mean, two one-sided tests
 # at alpha 0.05, that is, the 90% Welch interval of the difference must lie inside the margin.
@@ -259,6 +268,115 @@ for (mode, t), row in rows.items():
     put(f"{p}.ci90_high", hi)
     put(f"{p}.margin", margin)
     put(f"{p}.verdict", verdict)
+
+# The superseded first RQ3 run, kept for the comparison the paper reports (silo at 100 tenants).
+old = {(row["mode"], row["tenants"]): row for row in load("superseded/rq3_tenancy_28fb3ec.json")["results"]}
+a_old, b_old = old[("silo", 100)]["throughput"]["decisionsPerSecond"], old[("pool", 100)]["throughput"]["decisionsPerSecond"]
+va, vb = statistics.variance(a_old) / len(a_old), statistics.variance(b_old) / len(b_old)
+d_old = statistics.fmean(a_old) - statistics.fmean(b_old)
+df_old = (va + vb) ** 2 / (va ** 2 / (len(a_old) - 1) + vb ** 2 / (len(b_old) - 1))
+lo_old, hi_old = d_old - t95_one(int(df_old)) * math.sqrt(va + vb), d_old + t95_one(int(df_old)) * math.sqrt(va + vb)
+m_old = 0.10 * statistics.fmean(b_old)
+put("rq3.first.silo.100.vs_pool.difference_share", d_old / statistics.fmean(b_old))
+put("rq3.first.silo.100.vs_pool.verdict", "equivalent" if -m_old < lo_old and hi_old < m_old else ("different" if (lo_old > m_old or hi_old < -m_old) else "not_established"))
+put("rq3.first.pool.100.decisions_per_second.mean", statistics.fmean(b_old))
+
+# RQ2 relative differences, lineage against the hardened baseline (amendment of 30 Oct 2026).
+for size in (10000, 100000, 1000000):
+    if f"rq2.{size}.lineage.bytes_per_decision" not in numbers:
+        continue
+    h, l = f"rq2.{size}.baseline_hardened", f"rq2.{size}.lineage"
+    put(f"rq2.{size}.lineage_vs_hardened.storage_saving_share", 1 - numbers[f"{l}.bytes_per_decision"] / numbers[f"{h}.bytes_per_decision"])
+    for q in ("p50", "p99"):
+        put(f"rq2.{size}.lineage_vs_hardened.{q}_reduction_share", 1 - numbers[f"{l}.latency_ms.{q}.mean"] / numbers[f"{h}.latency_ms.{q}.mean"])
+
+
+def tost_welch(a, b, margin):
+    """90% Welch interval of mean(a) - mean(b) and the RQ3 verdict for a margin."""
+    va, vb = statistics.variance(a) / len(a), statistics.variance(b) / len(b)
+    diff = statistics.fmean(a) - statistics.fmean(b)
+    se = math.sqrt(va + vb)
+    df = (va + vb) ** 2 / (va ** 2 / (len(a) - 1) + vb ** 2 / (len(b) - 1))
+    lo, hi = diff - t95_one(int(df)) * se, diff + t95_one(int(df)) * se
+    verdict = "equivalent" if -margin < lo and hi < margin else ("different" if (lo > margin or hi < -margin) else "not_established")
+    return diff, lo, hi, verdict
+
+
+# RQ2 write side (amendment of 30 Oct 2026): lineage and hardened baseline persist the same
+# decisions; quantiles per run, paired differences by run, two-stage paired bootstrap.
+w_path = os.path.join(RAW, "rq2_write.json")
+if os.path.exists(w_path):
+    w = json.load(open(w_path))
+    wd = w["designs"]
+    put("rq2w.runs", w["runsPerLevel"])
+    put("rq2w.decisions_per_run", w["decisionsPerRun"])
+    put("rq2w.warmup", w["warmup"])
+    put("rq2w.max_decisions", sum(len(lv["runs"]) * w["decisionsPerRun"] + w["warmup"] for lv in w["results"]))
+    QS = (("p50", 0.5), ("p95", 0.95), ("p99", 0.99))
+    for k, lv in enumerate(w["results"]):
+        c = lv["concurrency"]
+        put(f"rq2w.levels.{k}", c)
+        p = f"rq2w.{c}"
+        runs = lv["runs"]
+        check(f"rq2w {c}: every run persisted every decision with both designs",
+              all(len(run[d]["times"]) == w["decisionsPerRun"] for run in runs for d in wd))
+        for d in wd:
+            put_summary(f"{p}.{d}.decisions_per_second", [run[d]["decisionsPerSecond"] for run in runs])
+            for q, qq in QS:
+                put_summary(f"{p}.{d}.latency_ms.{q}", [float(np.quantile(run[d]["times"], qq)) for run in runs])
+        h, l = "baseline_hardened", "lineage"
+        put_summary(f"{p}.hardened_minus_lineage.decisions_per_second", [run[h]["decisionsPerSecond"] - run[l]["decisionsPerSecond"] for run in runs])
+        for q, qq in QS:
+            put_summary(f"{p}.hardened_minus_lineage.latency_ms.{q}", [float(np.quantile(run[h]["times"], qq) - np.quantile(run[l]["times"], qq)) for run in runs])
+        a = [run[h]["decisionsPerSecond"] for run in runs]
+        b = [run[l]["decisionsPerSecond"] for run in runs]
+        diff, lo, hi, verdict = tost_welch(a, b, 0.10 * statistics.fmean(b))
+        put(f"{p}.hardened_vs_lineage.difference_share", diff / statistics.fmean(b))
+        put(f"{p}.hardened_vs_lineage.ci90_low", lo)
+        put(f"{p}.hardened_vs_lineage.ci90_high", hi)
+        put(f"{p}.hardened_vs_lineage.verdict", verdict)
+        data = {d: np.asarray([run[d]["times"] for run in runs]) for d in wd}
+        n_runs, n_rep = data[l].shape
+        rng = np.random.default_rng(20261030)
+        B, CHUNK = 2000, 50
+        est = {(d, q): [] for d in wd for q, _ in QS}
+        for _ in range(B // CHUNK):
+            ri = rng.integers(0, n_runs, size=(CHUNK, n_runs))
+            ji = rng.integers(0, n_rep, size=(CHUNK, n_runs, n_rep))
+            for d in wd:
+                x = data[d][ri[:, :, None], ji]
+                for q, qq in QS:
+                    est[(d, q)].append(np.quantile(x, qq, axis=2).mean(axis=1))
+        for q, _ in QS:
+            diff = np.concatenate(est[(h, q)]) - np.concatenate(est[(l, q)])
+            put(f"{p}.hardened_minus_lineage.latency_ms.{q}.boot_low", float(np.quantile(diff, 0.025)))
+            put(f"{p}.hardened_minus_lineage.latency_ms.{q}.boot_high", float(np.quantile(diff, 0.975)))
+
+# RQ2 replay query plans (amendment of 30 Oct 2026): descriptive.
+pl_path = os.path.join(RAW, "rq2_plans_1000000.json")
+if os.path.exists(pl_path):
+    pl = json.load(open(pl_path))
+    put("rq2plans.sample", pl["sample"])
+    for d, v in pl["designs"].items():
+        p = f"rq2plans.{d}"
+        reps = v["replays"]
+        put(f"{p}.statements_per_replay", statistics.median(len(r["statements"]) for r in reps))
+        put(f"{p}.index_scans_per_replay", statistics.median(sum(x.startswith("Index Scan") or x.startswith("Index Only Scan") for st in r["statements"] for x in st["nodes"]) for r in reps))
+        put(f"{p}.execution_ms_per_replay.median", statistics.median(sum(st["executionMs"] for st in r["statements"]) for r in reps))
+        put(f"{p}.planning_ms_per_replay.median", statistics.median(sum(st["planningMs"] for st in r["statements"]) for r in reps))
+        put(f"{p}.server_ms_per_replay.median", statistics.median(sum(st["planningMs"] + st["executionMs"] for st in r["statements"]) for r in reps))
+        put(f"{p}.shared_hit_per_replay.median", statistics.median(sum(st["sharedHit"] for st in r["statements"]) for r in reps))
+        put(f"{p}.shared_read_per_replay.median", statistics.median(sum(st["sharedRead"] for st in r["statements"]) for r in reps))
+        lay = v["layout"]
+        put(f"{p}.tables", len(lay["tables"]))
+        put(f"{p}.indexes", len(lay["indexes"]))
+        for part in ("heap", "toast", "indexes"):
+            put(f"{p}.{part}_bytes_per_decision", sum(t[part] for t in lay["tables"]) / pl["size"])
+        put(f"{p}.default_compression", all(c["compression"] in ("d", "default") for c in lay["compression"]))
+    for part in ("heap", "indexes"):
+        put(f"rq2plans.hardened_minus_lineage.{part}_bytes_per_decision", numbers[f"rq2plans.baseline_hardened.{part}_bytes_per_decision"] - numbers[f"rq2plans.lineage.{part}_bytes_per_decision"])
+    put("rq2plans.hardened_minus_lineage.server_ms_per_replay", numbers["rq2plans.baseline_hardened.server_ms_per_replay.median"] - numbers["rq2plans.lineage.server_ms_per_replay.median"])
+    put("rq2plans.toast_compression", next(x["setting"] for x in pl["designs"]["lineage"]["layout"]["settings"] if x["name"] == "default_toast_compression"))
 
 # RQ4
 r4 = load("rq4_faults.json")

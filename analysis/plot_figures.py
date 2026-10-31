@@ -93,7 +93,7 @@ axes[0].legend(fontsize=8)
 save(fig, "fig3_rq2_latency")
 
 # Figure 4: RQ3 throughput and storage per tenant
-counts = sorted({int(k.split(".")[2]) for k in N if k.startswith("rq3.")})
+counts = sorted({int(k.split(".")[2]) for k in N if k.split(".")[:2] in (["rq3", "silo"], ["rq3", "pool"], ["rq3", "bridge"])})
 fig, axes = plt.subplots(1, 2, figsize=(7, 2.8))
 for key, name, color, marker in MODES:
     means = [N[f"rq3.{key}.{n}.decisions_per_second.mean"] for n in counts]

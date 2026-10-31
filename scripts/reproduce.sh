@@ -1,7 +1,7 @@
 #!/bin/sh
 # Reproduces every raw result, number, and figure from a clean clone.
 # Needs the database from `docker compose up -d db` (or PG* variables pointing elsewhere).
-# About three hours on a 10 core laptop, most of it the 1,000,000 decision corpus.
+# About five hours on a 10 core laptop, most of it the 1,000,000 decision corpus and RQ3.
 set -eu
 cd "$(dirname "$0")/.."
 export FRESH=1

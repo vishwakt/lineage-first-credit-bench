@@ -35,7 +35,7 @@ npm ci
 npm test
 ```
 
-Reproduce every result, number, and figure (about three hours on a 10 core laptop):
+Reproduce every result, number, and figure (about five hours on a 10 core laptop):
 
 ```bash
 npm run reproduce
