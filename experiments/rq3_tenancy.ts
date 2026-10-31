@@ -1,6 +1,6 @@
 // RQ3: tenancy modes. For each mode (silo, pool, bridge) and tenant count (10, 50, 100):
 //   onboarding   steps, SQL statements, changed files, and time to onboard each tenant
-//   throughput   RUNS timed runs of M decision persists (lineage design) spread over all
+//   throughput   RUNS timed runs of M decision persists (20,000 since the 30 Oct amendment) (lineage design) spread over all
 //                tenants with C in flight; decision runs are generated before timing, so
 //                the figure measures the storage tier, not the synthetic providers
 //   storage      bytes of every database the mode uses, per tenant, empty and after the runs
@@ -22,9 +22,20 @@ import { Tenancy, TENANCY_MODES, type OnboardingRecord, type TenantSpec } from "
 import type { SourceId } from "../src/core/types.ts";
 
 const RUNS = Number(process.env.RUNS ?? 20);
-const M = Number(process.env.M ?? 2000);
+const M = Number(process.env.M ?? 20000);
 const C = Number(process.env.C ?? 16);
 const fetch = (s: SourceId, c: string, a: string) => fetchFromProvider(DEFAULT_WORLD, s, c, a).response;
+
+// Checkpoints completed so far (timed and requested), from the server's checkpointer view.
+async function checkpoints(): Promise<number> {
+  const c = new pg.Client(config());
+  await c.connect();
+  try {
+    return Number((await c.query("SELECT num_timed + num_requested AS n FROM pg_stat_checkpointer")).rows[0].n);
+  } finally {
+    await c.end();
+  }
+}
 
 async function databasesBytes(prefix: string): Promise<number> {
   const c = new pg.Client(config());
@@ -77,10 +88,12 @@ for (const n of counts)
     // Warm-up: one decision per tenant opens every connection pool.
     await persistAll(tenancy, runsFor(tenants, 0, n, "warm"));
     const throughput: number[] = [];
+    const checkpointsBefore = await checkpoints();
     for (let r = 0; r < RUNS; r++) {
       const batch = runsFor(tenants, n + r * M, M, `r${r}`);
       throughput.push(await persistAll(tenancy, batch));
     }
+    const checkpointsDuringRuns = (await checkpoints()) - checkpointsBefore;
     const loadedBytes = await databasesBytes(prefix);
     const connectionCeiling = tenancy.connectionCeiling();
 
@@ -93,7 +106,7 @@ for (const n of counts)
     const row = {
       mode, tenants: n, highPerimeterTenants: tenants.filter((t) => t.perimeter === "high").length,
       onboarding, emptyBytes, loadedBytes, decisionsStored: n + RUNS * M,
-      throughput: { runs: RUNS, decisionsPerRun: M, concurrency: C, connectionCeiling, decisionsPerSecond: throughput },
+      throughput: { runs: RUNS, decisionsPerRun: M, concurrency: C, connectionCeiling, checkpointsDuringRuns, decisionsPerSecond: throughput },
       isolation: { attackers: attackers?.length ?? n, summary: summarize(attempts) },
     };
     results.push(row);

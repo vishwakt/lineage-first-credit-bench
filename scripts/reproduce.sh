@@ -9,6 +9,8 @@ node experiments/generator_check.ts
 node experiments/rq1_footprint.ts
 node experiments/rq2_replay.ts 10000 100000 1000000
 node experiments/rq2_code_drift.ts 100000
+node experiments/rq2_write.ts 1 4 16
+node experiments/rq2_plans.ts 1000000
 node experiments/rq3_tenancy.ts 10 50 100
 node experiments/rq4_faults.ts 50000
 node experiments/environment.ts
